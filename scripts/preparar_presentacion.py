@@ -10,6 +10,7 @@ ARCHIVOS = [
     "CLASIFICADOR_TEMATICO.md",
     "docs/ESTADO_Y_CONTINUIDAD.md",
     "docs/MANTENIMIENTO.md",
+    "docs/REVISION_ACADEMICA_Y_VIABILIDAD.md",
     "datos/piloto_clasificacion.json",
     "PROPUESTA_PARA_ENTREGA.md",
     "output/pdf/PROPUESTA_PARA_ENTREGA.pdf",

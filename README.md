@@ -4,6 +4,8 @@ Asistente para preparar exámenes multiple choice a partir de material docente. 
 
 Para retomar sin el chat: [estado, decisiones y pendientes](docs/ESTADO_Y_CONTINUIDAD.md), [mantenimiento](docs/MANTENIMIENTO.md) e [instrucciones para agentes](AGENTS.md).
 
+Consultar también la [revisión académica, de costo y compatibilidad](docs/REVISION_ACADEMICA_Y_VIABILIDAD.md): distingue viabilidad del diseño de pruebas pendientes de implementación.
+
 ## Demo pública
 
 **[Abrir la demo en GitHub Pages](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/)**

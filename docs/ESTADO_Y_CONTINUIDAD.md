@@ -75,3 +75,7 @@ El siguiente paso útil de planificación es revisar el piloto con el compañero
 | Este repositorio | Todo el material propio de Aula: propuesta, demo, planificación y futura implementación. |
 
 El contexto curricular está en [Proyecto integrador en la cátedra](PROYECTO_INTEGRADOR_EN_LA_CATEDRA.md); los métodos del clasificador en [su diseño](../CLASIFICADOR_TEMATICO.md). No duplicar materiales privados ni la base completa de teoría aquí.
+
+## Segunda revisión de pertinencia y factibilidad
+
+Se contrastó el proyecto con clases HTML originales y ejercicios pertinentes; ver [revisión académica y de viabilidad](REVISION_ACADEMICA_Y_VIABILIDAD.md). El mínimo v0.3 sigue siendo plausible y pertinente, sin costo monetario obligatorio de servicios. No se certifican precisión, cronograma ni compatibilidad final. Se aclaró el plan para que la API directa no sea una condición de aceptación: recuperación y clasificación deben sostener una defensa sin pagos. La matriz de Windows/Linux/macOS y el uso descargado sin red siguen pendientes. No se entrenó ni implementó el producto final.

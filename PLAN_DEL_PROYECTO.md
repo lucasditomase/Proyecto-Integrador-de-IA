@@ -39,21 +39,22 @@ Duración propuesta: una sesión corta de desarrollo, una vez autorizado ese pas
 | Comprobación | Resultado necesario | Si falla |
 |---|---|---|
 | Recorrido básico | Abrir texto propio y recuperar fragmentos sin servicios externos. | Simplificar formato y corpus. |
-| Acceso API | Un proveedor permite una solicitud desde el navegador con clave de usuario y devuelve salida utilizable. | Probar una alternativa autorizada o exportación/importación; evaluar consola/intermediario mínimo solo si es necesario. |
+| Intercambio externo mínimo | El pedido y las preguntas importadas tienen un formato verificable y revisable. | Simplificar formato sin exigir una API. |
+| API directa opcional | Solo si se intenta: acceso permitido desde navegador con clave propia y una prueba sin pago del grupo. | Conservar intercambio manual y documentar que no hay conexión directa. |
 | Presupuesto | La prueba no requiere pagos del grupo; existe una vía de evaluación sin gasto. | No contratar ni consumir una API paga; revisar alcance conectado. |
 | Salida | Las preguntas pueden convertirse al formato común y corregirse en el editor. | Reducir estructura solicitada o elegir otro modelo. |
 | Portabilidad | El recorrido básico no depende de macOS ni de recursos específicos del equipo. | Quitar la dependencia o reconsiderar distribución. |
 
 No intentar resolver una restricción de uso de un proveedor reutilizando credenciales de otra aplicación ni eludiendo sus condiciones. No hacer públicas claves ni pedirlas en el chat. La prueba deberá usar un acceso dispuesto específicamente para ella.
 
-Decisión de salida: confirmar web + API directa, o documentar una alternativa antes de construir el sistema completo. Por ahora ninguna conexión está comprobada.
+Decisión de salida: validar el núcleo local y el intercambio manual; la API directa es una ampliación condicionada y no bloquea la aceptación del mínimo. Por ahora ninguna conexión está comprobada.
 
 ## 4. Etapas y resultados revisables
 
 | Etapa | Trabajo | Criterio de finalización |
 |---|---|---|
 | A. Decidir | Revisar este documento con el compañero y la devolución de la cátedra. | Interfaz principal, alcance mínimo y reparto acordados. |
-| B. Viabilidad | Comprobar procesamiento local liviano y una conexión de IA posible. | Registro de resultados y decisión de arquitectura. |
+| B. Viabilidad | Comprobar procesamiento local liviano, exportación de modelo e intercambio manual; API solo si se intenta. | Registro de resultados, requisitos de navegador y decisión de arquitectura sin pago obligatorio. |
 | C. Base offline | Texto propio, búsqueda, editor, configuración, guardado y exportación. | Crear y terminar un examen nuevo sin clave y sin conexión. |
 | D. Clasificador temático | Revisar etiquetas, comparar palabras clave con TF-IDF/regresión logística y preparar inferencia liviana. | Categorías delimitadas, evaluación por grupos y predicción revisable; sin exigir Python al docente. |
 | E. Asistencia externa | Pedido e importación manual estructurada; API con clave de sesión solo si se valida. | Añadir preguntas externas revisables sin bloquear el modo básico; documentar si el intercambio es manual o conectado. |
@@ -123,3 +124,7 @@ Pendientes: devolución de la cátedra, dedicación del compañero, proveedor vi
 ## Integración acordada para planificar
 
 Se adopta la propuesta del compañero como organizador temático, con [protocolo y datos piloto](CLASIFICADOR_TEMATICO.md). Las plantillas automáticas pasan a ampliación: se reemplaza una función prevista por un módulo de aprendizaje supervisado más vinculado a los ejercicios, sin ampliar indiscriminadamente la lista de tareas. No se inicia implementación real en esta actualización.
+
+## Revisión académica y de viabilidad
+
+La [auditoría del 26 de octubre](docs/REVISION_ACADEMICA_Y_VIABILIDAD.md) vincula métodos con material original, define evidencia experimental y distingue costo monetario obligatorio de uso externo opcional. Compatibilidad objetivo: navegadores actuales en Windows, macOS y Linux, pendiente de pruebas en los sistemas finales. No prometer cualquier equipo/navegador ni rendimiento sin medir. Mantener un artefacto local con recursos/modelo incluidos, sin servidor ni Python obligatorio para docentes.
