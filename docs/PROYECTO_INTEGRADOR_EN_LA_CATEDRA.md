@@ -11,7 +11,7 @@ El recorrido del integrador combina elegir un problema, investigar viabilidad, d
 ## Estado confirmado
 
 - El trabajo será de dos integrantes: el estudiante y un amigo.
-- La propuesta vigente v0.2 es un asistente de exámenes con base gratuita/offline y asistencia externa opcional. La comparación mínima es búsqueda por coincidencia simple frente a TF-IDF/coseno. Embeddings y un modelo propio son ampliaciones. La propuesta se presentará para revisión de la cátedra.
+- La propuesta vigente v0.3 es un asistente de exámenes con base gratuita/offline y asistencia externa opcional. La comparación mínima es búsqueda por coincidencia simple frente a TF-IDF/coseno. Se incorpora un clasificador temático pequeño propuesto; embeddings y modelos de lenguaje locales quedan como ampliaciones. La propuesta se presentará para revisión de la cátedra.
 - La fase actual es diagramar, planear, discutir y opinar. La implementación real sigue pendiente; autorizó una demo HTML sin IA para presentar hoy.
 - No hay respuestas personales confirmadas del estudiante a las preguntas del integrador. El documento nuevo propone una formulación revisable.
 - Hay un alcance y diagrama propuestos; faltan corpus exacto, modelos disponibles, horas semanales. El estudiante confirmó que no hay requisito de entrenar desde cero y se permiten preentrenados.
@@ -71,7 +71,7 @@ La propuesta debe estar presentable el 26 de octubre de 2026. El cierre del espa
 
 El estudiante remarcó que la asignatura no es de programación: el objetivo es aplicar conocimientos de la cátedra a una necesidad útil. Evaluar propuestas por su contenido de IA y por la evidencia que permitiría justificar su utilidad, no por la complejidad de desarrollo de la aplicación.
 
-Si se continúa con evaluaciones educativas, explicitar qué tarea de IA se estudia y cómo se mide: representación de documentos/preguntas, recuperación de contenido pertinente, clasificación temática u otra tarea justificada, generación condicionada y análisis de errores. Estas son posibilidades para discutir, no componentes ya elegidos. La correspondencia entre temas de la cátedra y componentes debe responder al problema; no es necesario usar todas las técnicas.
+Si se continúa con evaluaciones educativas, explicitar qué tarea de IA se estudia y cómo se mide: representación de documentos/preguntas, recuperación de contenido pertinente, clasificación temática u otra tarea justificada, generación condicionada y análisis de errores. El alcance vigente selecciona recuperación y clasificación temática acotada, con asistencia generativa externa opcional. La correspondencia entre temas de la cátedra y componentes debe responder al problema; no es necesario usar todas las técnicas.
 
 ## Aclaración de alcance y presentación del 26 de octubre
 
@@ -79,8 +79,12 @@ El estudiante confirmó que no es una tesis: es un integrador, algo más elabora
 
 ## Consolidación posterior de requisitos
 
-Se confirmó presupuesto cero, uso en equipos comunes y ausencia de dependencia de la Mac del estudiante. Se discutieron web, consola, modelos pequeños, claves propias y un modo básico útil offline. La recomendación actual, aún para decidir con el grupo, es web/HTML descargable con núcleo offline y API opcional. No se implementaron esas funciones. Consultar [opciones y requisitos](../DECISIONES_Y_OPCIONES.md) y [plan consolidado](../PLAN_DEL_PROYECTO.md). El informe y PDF se actualizaron a v0.2, junto con la demo y el paquete. Consultar [el alcance común](../ALCANCE_DE_LA_PROPUESTA.md) para distinguir mínimo, opciones y estado real.
+Se confirmó presupuesto cero, uso en equipos comunes y ausencia de dependencia de la Mac del estudiante. Se discutieron web, consola, modelos pequeños, claves propias y un modo básico útil offline. La recomendación actual, aún para decidir con el grupo, es web/HTML descargable con núcleo offline y API opcional. No se implementaron esas funciones. Consultar [opciones y requisitos](../DECISIONES_Y_OPCIONES.md) y [plan consolidado](../PLAN_DEL_PROYECTO.md). El informe y PDF se actualizaron a v0.3, junto con la demo y el paquete. Consultar [el alcance común](../ALCANCE_DE_LA_PROPUESTA.md) para distinguir mínimo, opciones y estado real.
 
-## Coherencia de presentación v0.2
+## Coherencia de presentación v0.3
 
 El [alcance común](../ALCANCE_DE_LA_PROPUESTA.md) define las funciones propuestas para el mínimo y las dependencias pendientes. El informe, PDF, demo, guion y paquete se mantienen alineados. La demo sigue siendo una simulación; no implica que se haya implementado el producto final.
+
+## Clasificador temático propuesto
+
+Se integra la idea del compañero de clasificar frases como organizador temático de preguntas. El [diseño](../CLASIFICADOR_TEMATICO.md) incluye tres categorías iniciales y 30 ejemplos exploratorios con etiquetas pendientes de revisión. Todavía no hay modelo entrenado. Para mantener el alcance, las plantillas automáticas se postergan; embeddings y conectores adicionales siguen siendo ampliaciones.

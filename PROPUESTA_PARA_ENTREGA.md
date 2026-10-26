@@ -1,7 +1,7 @@
 # Aula: asistente para preparar exámenes multiple choice
 
 **Trabajo integrador · Inteligencia Artificial · Ingeniería en Informática · 2026**  
-**Propuesta consolidada v0.2 · 26 de octubre de 2026 · Grupo de dos integrantes**
+**Propuesta consolidada v0.3 · 26 de octubre de 2026 · Grupo de dos integrantes**
 
 ## Problema y objetivo
 
@@ -13,7 +13,7 @@ La herramienta tendrá un núcleo gratuito que funcione sin conexión ni clave A
 
 Una interfaz HTML descargable, también publicable como página web, permitirá cargar TXT/Markdown o pegar texto, buscar contenido pertinente y crear un banco de preguntas. Cada pregunta tendrá cuatro opciones, una o dos respuestas correctas, fuente y un fundamento registrado durante la revisión.
 
-El modo básico incluirá búsqueda sobre el material, edición manual y sugerencias extractivas sencillas mediante reglas, por ejemplo completar un término de una definición. El docente deberá revisar y completar las opciones y la clave. No se promete generación libre o razonamiento automático offline.
+El modo básico incluirá búsqueda, edición manual y un clasificador temático de preguntas, integrando la idea original de nuestro compañero: aprender categorías a partir de frases de ejemplo. Propondrá un tema para preguntas escritas o importadas y el docente podrá corregirlo. El piloto abarcará Representación y vecinos, Datos y evaluación, y Redes y aprendizaje; no clasificará cualquier materia automáticamente. No se promete generación libre offline.
 
 Se podrá editar, aprobar, descartar, guardar e importar un proyecto, y exportar por separado el examen y la clave. Estas funciones no requerirán pagos ni una cuenta externa.
 
@@ -27,7 +27,7 @@ También evaluaremos una conexión directa por API con una clave propia del usua
 
 1. **Material:** preparar el texto, dividirlo en fragmentos y conservar su origen.
 2. **Selección:** recuperar contenido pertinente para el tema solicitado.
-3. **Preguntas:** crear borradores mediante editor/plantillas o incorporar propuestas de un asistente externo.
+3. **Preguntas:** redactarlas o importarlas y obtener una sugerencia temática revisable.
 4. **Revisión:** comprobar contenido, opciones, claves y fuentes; aceptar, editar o descartar.
 5. **Salida:** guardar el proyecto y exportar examen y clave separados.
 
@@ -36,16 +36,17 @@ También evaluaremos una conexión directa por API con una clave propia del usua
 - **Representación y calidad de datos:** extracción, segmentación, términos, duplicados y procedencia de la información.
 - **Vectores y similitud:** TF-IDF, producto escalar, norma y coseno para ordenar fragmentos respecto de una consulta.
 - **NLP y recuperación:** comparar una búsqueda por coincidencia simple con TF-IDF y analizar resultados y limitaciones.
+- **Aprendizaje supervisado:** entrenar y evaluar un clasificador pequeño TF-IDF/regresión logística frente a palabras clave, con etiquetas, particiones y matriz de confusión.
 - **IA generativa y contexto:** preparar material seleccionado para un modelo preentrenado, comprender RAG y distinguir recuperación, generación e inferencia del entrenamiento.
 - **Evaluación y supervisión:** establecer una referencia, analizar errores, verificar restricciones y mantener la decisión final en el docente.
 
-La programación será el medio para experimentar y construir la herramienta. Se busca demostrar conocimientos aplicados y explicar sus resultados, con el alcance de un integrador y no de una tesis. No se exige entrenar desde cero. Embeddings, un modelo pequeño propio o conectores adicionales quedan como posibles ampliaciones, sin incorporarlos por obligación.
+Entrenaremos el clasificador durante el desarrollo y exportaremos sus parámetros para inferencia en el navegador, sin exigir Python al docente. Embeddings, plantillas automáticas y otros conectores quedan como ampliaciones. La prioridad es demostrar conocimientos aplicados y explicar resultados.
 
 ## Cómo evaluaremos el resultado
 
 Usaremos material acotado de tres unidades y solicitudes con fragmentos relevantes identificados. Compararemos coincidencia de términos y TF-IDF/coseno sobre las mismas consultas, reservando algunas para prueba final. Observaremos pertinencia de resultados y ejemplos de fallos.
 
-Revisaremos una muestra pequeña de preguntas según claridad, corrección de la clave, correspondencia temática y respaldo documental. También comprobaremos cantidades de opciones/respuestas y que el examen no revele la clave. La revisión de ambos integrantes será una evaluación inicial, no una certificación pedagógica.
+Revisaremos etiquetas de ejemplos antes de entrenar y reservaremos casos por grupos conceptuales para evitar repartir paráfrasis entre entrenamiento y prueba. Informaremos errores por clase, sin prometer precisión antes de medirla. Revisaremos una muestra pequeña de preguntas según claridad, corrección de la clave, correspondencia temática y respaldo documental. También comprobaremos cantidades de opciones/respuestas y que el examen no revele la clave. La revisión de ambos integrantes será una evaluación inicial, no una certificación pedagógica.
 
 ## Viabilidad y límites
 
@@ -55,6 +56,6 @@ No se incluyen en el mínimo OCR, imágenes, fórmulas, PDF, corrección de alum
 
 ## Qué muestra la demo de hoy
 
-La demo v0.2 muestra material, configuración de modo básico/asistido, revisión, edición, aprobación y exportación. Usa un apunte y preguntas preparados: no genera contenido nuevo, no procesa material propio mediante IA ni solicita claves reales. La selección de modo explica el flujo previsto, pero ambos recorridos usan los mismos ejemplos.
+La demo v0.3 muestra material, configuración de modo básico/asistido, revisión, edición, aprobación y exportación. Las etiquetas de tema son precargadas y se pueden corregir; no hay un modelo entrenado. Usa un apunte y preguntas preparados: no genera contenido nuevo, no procesa material propio mediante IA ni solicita claves reales. La selección de modo explica el flujo previsto, pero ambos recorridos usan los mismos ejemplos.
 
-El producto final aún no está implementado. La presentación distingue expresamente las funciones demostradas, el mínimo propuesto y las conexiones pendientes de validación.
+El producto final aún no está implementado.

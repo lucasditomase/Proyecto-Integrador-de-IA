@@ -1,6 +1,6 @@
 # Alcance común de la propuesta
 
-**Versión de presentación: 0.2 · 26 de octubre de 2026.**
+**Versión de presentación: 0.3 · 26 de octubre de 2026.**
 
 Este es el alcance de referencia del informe, la demo, el plan y el paquete de presentación. Una alternativa explorada en el documento de opciones no es automáticamente una función comprometida.
 
@@ -14,7 +14,7 @@ Ayudar al docente a construir un examen multiple choice revisable a partir de ma
 - Entrada inicial de TXT/Markdown o texto pegado; preparación y segmentación con procedencia.
 - Búsqueda y selección de fragmentos mediante TF-IDF y similitud coseno, comparadas con coincidencia simple de términos.
 - Editor y banco de preguntas: cuatro opciones, una o dos respuestas correctas, fuente y fundamento registrado por el docente.
-- Sugerencias extractivas sencillas mediante reglas/plantillas, revisables; no generación libre offline.
+- Clasificador temático propuesto para sugerir etiquetas de preguntas escritas/importadas, limitado a tres temas iniciales de IA y sujeto a validación de datos/modelo. Corrección manual disponible.
 - Edición, aprobación/descarte, guardado/importación del proyecto y exportación del examen y clave por separado.
 - Preparación de un pedido estructurado con fragmentos seleccionados y posibilidad de importar preguntas en un formato documentado desde un asistente externo. Es un intercambio manual, no una conexión automática ni un servicio gratuito incluido.
 - Una evaluación pequeña que muestre los métodos aplicados, resultados y errores.
@@ -29,13 +29,13 @@ Si la conexión directa resulta viable, se integrará un único proveedor inicia
 
 ## Ampliaciones que no forman parte del mínimo
 
-Embeddings, clasificador propio, consola para docentes, conectores con OpenCode/Cline, PWA, varios proveedores, PDF, OCR, imágenes y fórmulas. No se descartan para siempre: no se prometen para la primera versión.
+Plantillas extractivas automáticas, embeddings, consola para docentes, conectores con OpenCode/Cline, PWA, varios proveedores, PDF, OCR, imágenes y fórmulas. No se descartan para siempre: no se prometen para la primera versión.
 
 ## Qué funciona hoy
 
 La demo utiliza un apunte incorporado y seis preguntas preparadas con variantes. Permite configurar, editar, aprobar, descartar y descargar ejemplos. La selección de modo únicamente explica el recorrido previsto: no cambia el origen de las preguntas.
 
-Todavía no implementa procesamiento real de documentos propios, TF-IDF, plantillas sobre texto propio, guardado/importación de proyectos, intercambio estructurado ni API de IA. Hoy se presenta una propuesta y una demostración de interacción, no el producto final.
+Las etiquetas de tema son precargadas: no hay un clasificador entrenado. Todavía no implementa procesamiento real de documentos propios, TF-IDF, guardado/importación de proyectos, intercambio estructurado ni API de IA. Hoy se presenta una propuesta y una demostración de interacción, no el producto final.
 
 ## Presupuesto y plazo
 
@@ -44,3 +44,7 @@ Dos integrantes, objetivo de dos semanas, presupuesto del grupo cero. El modo b�
 ## Criterio para considerar cumplido el trabajo
 
 En la versión final, una persona debe poder terminar un examen nuevo con su propio texto sin API, guardar y retomar el proyecto y exportar un examen sin revelar la clave. Debe poder explicar la selección de fragmentos y sus errores. La modalidad avanzada se documentará según la conexión efectivamente verificada, sin atribuir funciones a una simulación.
+
+## Integración de la propuesta del compañero
+
+El [clasificador temático](CLASIFICADOR_TEMATICO.md) integra su idea de clasificar frases en una función útil para organizar preguntas. Hay [30 ejemplos exploratorios](datos/piloto_clasificacion.json) con etiquetas provisionales; no hay métricas ni entrenamiento realizados. No se promete clasificación universal. Las plantillas se postergan para conservar un alcance viable.

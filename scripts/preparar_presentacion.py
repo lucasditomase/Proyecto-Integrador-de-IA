@@ -7,6 +7,8 @@ import zipfile
 BASE = Path(__file__).resolve().parents[1]
 ARCHIVOS = [
     "ALCANCE_DE_LA_PROPUESTA.md",
+    "CLASIFICADOR_TEMATICO.md",
+    "datos/piloto_clasificacion.json",
     "PROPUESTA_PARA_ENTREGA.md",
     "output/pdf/PROPUESTA_PARA_ENTREGA.pdf",
     "PLAN_DEL_PROYECTO.md",
@@ -15,13 +17,15 @@ ARCHIVOS = [
     "demo/index.html",
     "demo/preview.png",
 ]
-LEEME = """# Aula · Presentación v0.2
+LEEME = """# Aula · Presentación v0.3
 
 1. Leer output/pdf/PROPUESTA_PARA_ENTREGA.pdf.
 2. Abrir demo/index.html en un navegador para recorrer la simulación.
 3. Consultar GUIA_PARA_PRESENTAR.md para explicar el alcance.
 
 ALCANCE_DE_LA_PROPUESTA.md es la referencia común. El mínimo propuesto funciona sin API; la asistencia externa es opcional. La conexión API directa necesita validar un proveedor. El intercambio manual no es una conexión automática.
+
+Se integra un clasificador temático propuesto para organizar preguntas. Los datos piloto son exploratorios, con etiquetas pendientes de revisión; no hay un modelo entrenado. Las etiquetas de la demo son precargadas y corregibles.
 
 La demo usa preguntas preparadas. No procesa material propio ni tiene IA conectada. Los modos básico y asistido son explicativos y utilizan los mismos ejemplos.
 
@@ -35,7 +39,7 @@ def main():
         if not (BASE / name).is_file():
             raise FileNotFoundError(name)
     manifiesto = {
-        "version": "0.2",
+        "version": "0.3",
         "fecha": "2026-10-26",
         "estado": "propuesta y demo simulada; producto final no implementado",
         "alcance": "ALCANCE_DE_LA_PROPUESTA.md",
@@ -51,7 +55,7 @@ def main():
         assert archivo.testzip() is None
         for name, digest in manifiesto["sha256"].items():
             assert hashlib.sha256(archivo.read(name)).hexdigest() == digest
-    print("Presentación v0.2 preparada y verificada:", ruta)
+    print("Presentación v0.3 preparada y verificada:", ruta)
 
 if __name__ == "__main__":
     main()

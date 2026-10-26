@@ -3,7 +3,7 @@
 **Fecha:** 26 de octubre de 2026.  
 **Estado:** consolidación para decidir el alcance. No autoriza ni inicia la implementación real.
 
-Este documento reúne las aclaraciones posteriores a la propuesta inicial. El [alcance común v0.2](ALCANCE_DE_LA_PROPUESTA.md) distingue el mínimo comprometido de las ampliaciones y es la referencia compartida con informe y demo. Distingue requisitos del estudiante, recomendaciones del asistente y asuntos que todavía deben comprobarse. El [plan de trabajo](PLAN_DEL_PROYECTO.md) traduce la recomendación en etapas.
+Este documento reúne las aclaraciones posteriores a la propuesta inicial. El [alcance común v0.3](ALCANCE_DE_LA_PROPUESTA.md) distingue el mínimo comprometido de las ampliaciones y es la referencia compartida con informe y demo. Distingue requisitos del estudiante, recomendaciones del asistente y asuntos que todavía deben comprobarse. El [plan de trabajo](PLAN_DEL_PROYECTO.md) traduce la recomendación en etapas.
 
 ## 1. Objetivo del integrador
 
@@ -22,7 +22,7 @@ El valor académico está en aplicar y explicar contenidos de la cátedra: repre
 | Flexibilidad | Web, HTML local, consola y herramientas externas son opciones; la demo en Pages no obliga a elegir web para todo. |
 | Funcionalidad sin conexión | Sin internet debe poder continuarse un trabajo real, no solamente mostrar preguntas preparadas. |
 | Ampliación mediante acceso del usuario | Una clave propia puede habilitar funciones adicionales; no convierte automáticamente ese uso en gratuito. |
-| Uso de preentrenados permitido | No hay exigencia de entrenar desde cero. Un modelo pequeño propio sigue siendo una posibilidad. |
+| Uso de preentrenados permitido | No hay exigencia de entrenar desde cero. Se incorpora un clasificador temático pequeño propuesto, sujeto a validación de datos y portabilidad. |
 | Plazo acotado | Objetivo de dos semanas desde el 26 de octubre; tercera semana solo como margen. |
 | Trabajo académico aplicado | Cada algoritmo añadido debe cumplir una función y tener una evaluación posible. |
 
@@ -30,7 +30,7 @@ La aceptación de llamadas opcionales pagadas por un usuario no se interpreta co
 
 ## 3. Estado real del proyecto
 
-Ya existen propuesta consolidada v0.2 en Markdown/PDF, alcance común, plan, guion y una demo HTML pública en GitHub Pages. La demo permite configuración y revisión, pero utiliza seis ejemplos preparados y sus variantes.
+Ya existen propuesta consolidada v0.3 en Markdown/PDF, alcance común, plan, guion y una demo HTML pública en GitHub Pages. La demo permite configuración y revisión, pero utiliza seis ejemplos preparados y sus variantes.
 
 **Todavía no existen:** procesamiento completo de material propio, recuperación real, un clasificador entrenado, generación mediante API, gestión de claves ni un modo offline funcional sobre documentos arbitrarios. Estas funciones se están planificando.
 
@@ -47,7 +47,7 @@ No hay proveedor ni arquitectura final aprobados. Tampoco se confirmó la dedica
 | Modelo de lenguaje local | Evita pagar inferencia externa. | Descarga, memoria, instalación y tiempos; depende del equipo. | No será requisito para profesores. |
 | OpenCode/Cline u otras herramientas | Puede aprovechar acceso que el usuario ya tenga. | Instalación e integración; una sesión existente no es una API universal para nuestra página. | Opcional y posterior. |
 | Exportar instrucciones e importar resultados | Permite trabajar con otro asistente sin integrar cada plataforma. | Paso manual y validación del archivo devuelto. | Respaldo posible, no integración automática. |
-| Modelo pequeño propio | Puede aportar aprendizaje supervisado y una función concreta. | Requiere ejemplos, etiquetas, comparación y distribución. | Solo si pasa un criterio de utilidad y tiempo. |
+| Clasificador temático propio | Organiza preguntas y aporta aprendizaje supervisado. | Requiere revisar ejemplos, etiquetas, evaluación y exportación. | Incorporado al plan; primer paso: validar datos y categorías. |
 
 ## 5. Arquitectura recomendada para discutir
 
@@ -75,12 +75,12 @@ Esta es una recomendación, no una promesa de compatibilidad ya comprobada. La p
 - Abrir texto propio y conservar la procedencia de sus fragmentos.
 - Buscar conceptos y recuperar fragmentos mediante un método liviano, inicialmente TF-IDF y coseno.
 - Crear preguntas manualmente con opciones, respuestas correctas y fuente.
-- Proponer algunos borradores extractivos mediante reglas/plantillas, por ejemplo completar un término omitido de una definición. El usuario revisa enunciado, distractores y clave.
-- Configurar una o dos respuestas correctas entre cuatro opciones; la propuesta automática inicial puede limitarse a una y permitir edición manual de ambas modalidades.
+- Sugerir un tema para preguntas escritas/importadas con el clasificador acotado a tres categorías de IA; permitir corrección manual.
+- Configurar una o dos respuestas correctas entre cuatro opciones; ambas modalidades se editan y revisan manualmente.
 - Editar, aceptar, descartar y organizar preguntas.
 - Guardar/importar el proyecto como archivo y exportar examen y clave separados.
 
-La utilidad básica no dependerá de producir lenguaje nuevo. La búsqueda y las propuestas deben operar sobre el material cargado, no sobre el banco fijo de la demo. Los borradores extractivos no equivalen a preguntas de aplicación o razonamiento.
+La utilidad básica no dependerá de producir lenguaje nuevo. La búsqueda debe operar sobre el material cargado y el clasificador sobre preguntas ingresadas, sin depender del banco fijo de la demo. Las plantillas extractivas quedan como ampliación.
 
 ### Qué significa offline
 
@@ -113,15 +113,13 @@ No se promete acceso gratuito ilimitado de terceros. Si existe una modalidad gra
 
 Estas referencias no sustituyen la prueba práctica del proveedor elegido y pueden cambiar.
 
-## 8. Modelo pequeño propio: cuándo sí y cuándo no
+## 8. Clasificador propio: integración de la propuesta del compañero
 
-Es opcional. No se propone entrenar un LLM. Una posibilidad es un clasificador temático de preguntas que ayude a detectar desvíos respecto del tema solicitado. Otra sería aprender a ordenar candidatos útiles si existen ejemplos etiquetados suficientes; no desarrollar ambas tareas por defecto.
+Se incorpora para planificar un organizador temático del banco de preguntas, adaptando la idea del compañero de clasificar frases. Se propone TF-IDF con regresión logística frente a una referencia de palabras clave. Tres clases iniciales de IA, sugerencia corregible y sin clasificar cualquier materia automáticamente.
 
-Antes de elegirlo hay que responder: qué entrada recibe, qué salida produce, qué ejemplos reales tenemos, qué baseline supera y cómo se medirá. Si el tema ya se conoce por la sección del documento, no añadir un clasificador para redescubrir esa etiqueta sin utilidad.
+El [protocolo](CLASIFICADOR_TEMATICO.md) detalla entrada, etiquetas, evaluación por grupos y exportación para inferencia liviana. El piloto tiene 30 ejemplos redactados por el asistente con etiquetas provisionales. No hay modelo entrenado ni precisión medida. Debe revisarse y ampliarse antes de evaluar generalización.
 
-Se puede comparar TF-IDF con K-NN o regresión logística y analizar su matriz de confusión. La división debe evitar que variantes casi idénticas de una misma pregunta contaminen entrenamiento y prueba. Clasificar un tema no comprueba la corrección de una clave.
-
-El entrenamiento puede hacerse durante el desarrollo; el uso del modelo debe ser liviano. Si distribuirlo exige que el profesor instale herramientas o descargue un modelo grande, no cumple el requisito principal.
+Las plantillas automáticas pasan a ampliación para compensar el trabajo. No se añaden a la vez varios clasificadores ni embeddings. Si el piloto no resulta viable, la modificación se documentará y revisará antes de prometer resultados.
 
 ## 9. Qué elegir ahora y qué dejar pendiente
 
@@ -132,7 +130,7 @@ El entrenamiento puede hacerse durante el desarrollo; el uso del modelo debe ser
 | Recomendado | Texto sencillo primero, recuperación liviana, banco editable y exportación. |
 | Recomendado | Una sola integración API inicial; ampliar después de comprobarla. |
 | Por comprobar | Proveedor, cuotas gratuitas, autorización de uso y acceso desde navegador. |
-| Por decidir | Si incorporar un único modelo propio aporta valor dentro del plazo. |
+| Incorporado a la planificación | Clasificador de preguntas propuesto por el compañero, con datos/categorías y portabilidad pendientes de validación. |
 | Posterior | CLI para usuarios, conectores de agentes, PWA, múltiples APIs y formatos complejos. |
 
 ## 10. Regla para decidir

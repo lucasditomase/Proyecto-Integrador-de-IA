@@ -12,9 +12,11 @@ Los textos propios pueden previsualizarse, pero no se interpretan ni generan pre
 
 ## Material del proyecto
 
-- [Alcance común de presentación v0.2](ALCANCE_DE_LA_PROPUESTA.md).
-- [Propuesta consolidada v0.2](PROPUESTA_PARA_ENTREGA.md).
+- [Alcance común de presentación v0.3](ALCANCE_DE_LA_PROPUESTA.md).
+- [Propuesta consolidada v0.3](PROPUESTA_PARA_ENTREGA.md).
 - [Informe PDF de dos páginas](output/pdf/PROPUESTA_PARA_ENTREGA.pdf).
+- [Clasificador temático: integración de la propuesta del compañero](CLASIFICADOR_TEMATICO.md).
+- [Datos exploratorios para revisar etiquetas](datos/piloto_clasificacion.json).
 - [Requisitos, opciones y decisiones](DECISIONES_Y_OPCIONES.md).
 - [Plan consolidado, alcance y etapas](PLAN_DEL_PROYECTO.md).
 - [Guía para presentar la idea](GUIA_PARA_PRESENTAR.md).
@@ -30,11 +32,11 @@ Abrir `demo/index.html` en un navegador. Es un archivo independiente: no requier
 
 Se recomienda una herramienta web/HTML descargable con dos modos: una base gratuita y offline para trabajar con material propio, y generación opcional mediante una clave API del usuario. Debe funcionar en equipos comunes y no depender de la Mac del grupo ni de un modelo de lenguaje local. Presupuesto del grupo: cero.
 
-La base prevista incluye preparación del texto, recuperación liviana, propuestas extractivas, edición y guardado/exportación. La asistencia externa contempla intercambio manual de solicitudes/preguntas y una API directa solo si se valida un proveedor. Consola, embeddings y un modelo pequeño propio son ampliaciones condicionadas a utilidad y plazo.
+La base prevista incluye preparación del texto, recuperación liviana, edición, clasificador temático propuesto y guardado/exportación. La asistencia externa contempla intercambio manual de solicitudes/preguntas y una API directa solo si se valida un proveedor. El clasificador incorpora la idea del compañero y requiere validar datos/modelo. Consola, embeddings y plantillas automáticas quedan como ampliaciones.
 
-El informe, PDF, demo y paquete de presentación corresponden a la versión 0.2 y comparten [el alcance de referencia](ALCANCE_DE_LA_PROPUESTA.md). Las opciones exploratorias se distinguen de las funciones comprometidas. La conexión API requiere una prueba previa; el intercambio manual con un asistente no se presenta como una conexión automática.
+El informe, PDF, demo y paquete de presentación corresponden a la versión 0.3 y comparten [el alcance de referencia](ALCANCE_DE_LA_PROPUESTA.md). Las opciones exploratorias se distinguen de las funciones comprometidas. La conexión API requiere una prueba previa; el intercambio manual con un asistente no se presenta como una conexión automática.
 
-La demo de presentación sigue usando preguntas preparadas. El procesamiento de material propio, el modo básico real y la conexión a IA todavía no se implementaron. No se eligió un proveedor definitivo.
+La demo de presentación sigue usando preguntas preparadas. El procesamiento de material propio, el clasificador, el modo básico real y la conexión a IA todavía no se implementaron. No se eligió un proveedor definitivo.
 
 ## Publicación con GitHub Pages
 

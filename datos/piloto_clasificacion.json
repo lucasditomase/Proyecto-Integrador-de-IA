@@ -1,0 +1,251 @@
+{
+  "version": "0.1",
+  "uso": "Piloto exploratorio para discutir categorías y anotación. No es un conjunto de prueba independiente ni evidencia de precisión.",
+  "categorias": {
+    "representacion_vecinos": "Representación y vecinos",
+    "datos_evaluacion": "Datos y evaluación",
+    "redes_aprendizaje": "Redes y aprendizaje"
+  },
+  "ejemplos": [
+    {
+      "id": "piloto-001",
+      "enunciado": "¿Qué representa cada componente de un vector de características?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/vector",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-002",
+      "enunciado": "¿Qué significa agregar una dimensión a la representación de una observación?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/vector",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-003",
+      "enunciado": "¿Cómo se calcula el producto escalar de dos vectores?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/producto_norma",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-004",
+      "enunciado": "¿Para qué se utiliza la norma al comparar representaciones vectoriales?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/producto_norma",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-005",
+      "enunciado": "¿Qué compara la similitud coseno entre dos vectores?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/coseno",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-006",
+      "enunciado": "¿Qué relación existe entre la orientación de dos vectores y su similitud coseno?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/coseno",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-007",
+      "enunciado": "¿Cómo afecta la escala de las variables a la distancia euclidiana?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/escala_distancia",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-008",
+      "enunciado": "¿Por qué cambiar las unidades de una variable puede cambiar sus vecinos más cercanos?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/escala_distancia",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-009",
+      "enunciado": "¿Cómo asigna una clase el algoritmo de un vecino más cercano?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/knn",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-010",
+      "enunciado": "¿Qué efecto puede tener aumentar la cantidad de vecinos de K-NN?",
+      "tema_propuesto": "representacion_vecinos",
+      "grupo_conceptual": "representacion_vecinos/knn",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-011",
+      "enunciado": "¿Qué función cumplen entrenamiento, validación y prueba?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/particiones",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-012",
+      "enunciado": "¿Por qué no debe elegirse la configuración final usando el conjunto de prueba?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/particiones",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-013",
+      "enunciado": "¿Qué es la fuga de información en la evaluación de un modelo?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/leakage",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-014",
+      "enunciado": "¿Por qué ajustar transformaciones con datos futuros puede producir una evaluación engañosa?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/leakage",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-015",
+      "enunciado": "¿Por qué un valor atípico no debe eliminarse sin investigar su origen?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/faltantes_atipicos",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-016",
+      "enunciado": "¿Qué decisiones conviene documentar al tratar valores faltantes del dataset?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/faltantes_atipicos",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-017",
+      "enunciado": "¿Por qué una accuracy alta puede ser engañosa en un conjunto desbalanceado?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/desbalance",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-018",
+      "enunciado": "¿Qué problema presenta predecir siempre la clase más frecuente al evaluar eventos raros?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/desbalance",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-019",
+      "enunciado": "¿Qué diferencia hay entre falsos positivos y falsos negativos?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/confusion",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-020",
+      "enunciado": "¿Qué información aporta la matriz de confusión que no muestra la cantidad total de aciertos?",
+      "tema_propuesto": "datos_evaluacion",
+      "grupo_conceptual": "datos_evaluacion/confusion",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-021",
+      "enunciado": "¿Qué función cumplen los pesos y el sesgo en una neurona artificial?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/neurona",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-022",
+      "enunciado": "¿Cómo se obtiene la preactivación de una neurona a partir de sus entradas?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/neurona",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-023",
+      "enunciado": "¿Qué devuelve ReLU para una entrada negativa?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/activaciones",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-024",
+      "enunciado": "¿Por qué se necesitan activaciones no lineales entre capas de una red?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/activaciones",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-025",
+      "enunciado": "¿Cuál es la función de backpropagation en el entrenamiento?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/backprop",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-026",
+      "enunciado": "¿Cómo interviene la regla de la cadena al calcular gradientes en una red?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/backprop",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-027",
+      "enunciado": "¿Qué hace el optimizador con los gradientes calculados?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/optimizacion",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-028",
+      "enunciado": "¿Por qué una tasa de aprendizaje demasiado grande puede producir inestabilidad?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/optimizacion",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-029",
+      "enunciado": "¿Qué indica que la pérdida de entrenamiento baja mientras la de validación aumenta?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/sobreajuste",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    },
+    {
+      "id": "piloto-030",
+      "enunciado": "¿Cómo puede ayudar early stopping a controlar el sobreajuste de una red?",
+      "tema_propuesto": "redes_aprendizaje",
+      "grupo_conceptual": "redes_aprendizaje/sobreajuste",
+      "estado_etiqueta": "provisional_pendiente_revision_del_grupo",
+      "origen": "Redacción de ejemplo del asistente basada en conceptos del material revisado; no proviene de exámenes reales."
+    }
+  ]
+}

@@ -5,7 +5,7 @@
 
 ## 1. Punto de partida
 
-El [documento de decisiones y opciones](DECISIONES_Y_OPCIONES.md) es la referencia para requisitos y alternativas. El [alcance de presentación v0.2](ALCANCE_DE_LA_PROPUESTA.md) se comparte con el informe, PDF, demo y paquete. La versión inicial queda en el historial de Git.
+El [documento de decisiones y opciones](DECISIONES_Y_OPCIONES.md) es la referencia para requisitos y alternativas. El [alcance de presentación v0.3](ALCANCE_DE_LA_PROPUESTA.md) se comparte con el informe, PDF, demo y paquete. La versión inicial queda en el historial de Git.
 
 Objetivo: herramienta para elaborar exámenes multiple choice con material docente, revisión y exportación. Dos personas, dos semanas como objetivo, máximo orientativo de tres. Cero gastos del grupo y un recorrido gratuito sin clave para los docentes.
 
@@ -19,14 +19,14 @@ La demo pública actual usa preguntas preparadas. No representa una implementaci
 2. Material propio mediante TXT/Markdown o texto pegado.
 3. Fragmentos con procedencia y búsqueda liviana mediante TF-IDF/coseno.
 4. Editor de preguntas con cuatro opciones y una/dos respuestas correctas.
-5. Borradores extractivos sencillos sujetos a revisión, no generación semántica offline.
+5. Organizador temático de preguntas con un clasificador pequeño propuesto y corrección manual. Tres categorías iniciales; prueba de datos/modelo antes de prometer resultados.
 6. Guardado e importación de un proyecto, y examen/clave separados.
 7. Preparación e importación de un intercambio manual con un asistente externo; una integración API directa solo si pasa la prueba de viabilidad.
 8. Casos de evaluación y explicación del procedimiento.
 
 ### Ampliaciones condicionadas
 
-PDF con texto seleccionable, embeddings, un clasificador propio, consola de usuario, integración con agentes, PWA y más proveedores. Elegir solo lo que tenga utilidad comprobable y tiempo disponible.
+Plantillas extractivas automáticas, PDF con texto seleccionable, embeddings, consola de usuario, integración con agentes, PWA y más proveedores. Elegir solo lo que tenga utilidad comprobable y tiempo disponible.
 
 ### Fuera del objetivo
 
@@ -55,7 +55,7 @@ Decisión de salida: confirmar web + API directa, o documentar una alternativa a
 | A. Decidir | Revisar este documento con el compañero y la devolución de la cátedra. | Interfaz principal, alcance mínimo y reparto acordados. |
 | B. Viabilidad | Comprobar procesamiento local liviano y una conexión de IA posible. | Registro de resultados y decisión de arquitectura. |
 | C. Base offline | Texto propio, búsqueda, editor, configuración, guardado y exportación. | Crear y terminar un examen nuevo sin clave y sin conexión. |
-| D. Asistencia básica | Extraer candidatos y construir plantillas sencillas con referencias. | Propuestas sobre material real, editables y claramente pendientes de revisión. |
+| D. Clasificador temático | Revisar etiquetas, comparar palabras clave con TF-IDF/regresión logística y preparar inferencia liviana. | Categorías delimitadas, evaluación por grupos y predicción revisable; sin exigir Python al docente. |
 | E. IA opcional | Clave de sesión, contexto seleccionado, salida estructurada y manejo de errores. | Añadir preguntas usando una conexión compatible, sin bloquear el modo básico. |
 | F. Evaluar | Probar casos reservados, revisar preguntas y explicar errores. | Comparación pequeña y resultados trazables. |
 | G. Entregar | Instrucciones, versión descargable, demo y exposición. | Otra persona puede recorrer el flujo sin ayuda técnica extensa. |
@@ -70,7 +70,7 @@ No se trabaja primero en conectores múltiples ni en una interfaz elaborada. La 
 | Álgebra vectorial | TF-IDF, producto escalar, norma y coseno. | Ejemplo calculado y ranking de fragmentos. |
 | Baseline y evaluación | Comparar coincidencia simple de términos con TF-IDF/coseno. | Mismas consultas, referencias relevantes y análisis de errores. |
 | NLP y RAG | Seleccionar contexto antes de generar con un modelo preentrenado. | Fragmentos enviados, preguntas y respaldo observado. |
-| Clasificación, si aporta valor | Un modelo pequeño para una tarea definida. | Datos etiquetados, partición adecuada, baseline y matriz de confusión. |
+| Clasificación temática propuesta | Organizar preguntas de tres temas con TF-IDF/regresión logística. | Revisión de etiquetas, partición por grupos, baseline y matriz de confusión. |
 | Sistema y supervisión | Controles estructurales, edición y conservación del trabajo ante fallas. | Casos inválidos, errores de API y límites documentados. |
 
 La comparación TF-IDF/embeddings explorada inicialmente queda como ampliación posible. No es obligatorio incluir embeddings si ello contradice el modo offline liviano o el presupuesto. Una comparación sencilla bien realizada sigue siendo valiosa.
@@ -81,7 +81,7 @@ Usar material acotado de tres unidades y algunas consultas literales y paráfras
 
 Revisar una muestra pequeña de preguntas, inicialmente del orden de 20 entre los modos disponibles. Registrar corrección de clave, claridad, tema, respaldo y cambios necesarios. Ambos integrantes revisan y contrastan discrepancias con el material. No presentar esta revisión como validación pedagógica general ni atribuir confianza estadística a una muestra pequeña.
 
-Si se entrena un clasificador, separar su evaluación de la del generador: identificar el tema no demuestra que una pregunta sea correcta. Si no hay datos y una función útil, no añadirlo.
+El [diseño del clasificador](CLASIFICADOR_TEMATICO.md) y sus 30 ejemplos piloto están preparados para revisión; no hay un modelo entrenado. Separar su evaluación de la del generador: identificar el tema no demuestra que una pregunta sea correcta. Si los datos no sostienen la tarea, revisar el alcance antes de comprometer resultados.
 
 ## 7. Criterios de aceptación del producto
 
@@ -99,9 +99,9 @@ Si se entrena un clasificador, separar su evaluación de la del generador: ident
 
 Fechas orientativas: objetivo interno 9 de noviembre de 2026, margen hasta el 16. La entrega de la propuesta inicial cierra el 30 de octubre a las 00:00, según el aviso recibido. No son fechas oficiales nuevas del trabajo final.
 
-- **Primer tramo:** decidir y probar viabilidad; no instalar componentes ni comprometer gastos sin necesidad.
-- **Semana 1:** núcleo offline, representación, búsqueda, editor y formato común de preguntas.
-- **Semana 2:** asistencia extractiva, integración API viable, evaluación e instrucciones.
+- **Primer tramo:** revisar el piloto de etiquetas con el compañero y probar viabilidad; no instalar componentes ni comprometer gastos sin necesidad.
+- **Semana 1:** núcleo offline, datos/etiquetas, referencia de palabras clave y primer clasificador, búsqueda y banco editable.
+- **Semana 2:** inferencia del clasificador en navegador, revisión, exportación, intercambio externo, evaluación e instrucciones. API directa solo si se valida y queda tiempo.
 - **Margen:** correcciones y devolución; no añadir funciones por defecto.
 
 Reparto propuesto: una persona trabaja en datos/búsqueda/evaluación y otra en editor/exportación/conexión. Ambas participan en diseño, pruebas y defensa. Los nombres, responsabilidades y horas reales todavía deben acordarse.
@@ -110,7 +110,7 @@ Reparto propuesto: una persona trabaja en datos/búsqueda/evaluación y otra en 
 
 Conservar: material real, recuperación explicable, banco editable, referencias, guardado/exportación y evaluación.
 
-Recortar primero: apariencia avanzada, PDF, conectores de agentes, múltiples proveedores, PWA y modelo propio opcional.
+Recortar primero: apariencia avanzada, PDF, conectores de agentes, múltiples proveedores, PWA y plantillas automáticas. El clasificador se valida temprano para no recortarlo silenciosamente al final.
 
 Si la integración externa no funciona bajo las condiciones de costo/acceso, documentarlo y revisar con la cátedra qué alcance demuestra suficientemente la aplicación de IA. No sustituir una función prometida por una simulación sin explicitarlo.
 
@@ -118,4 +118,8 @@ Si la integración externa no funciona bajo las condiciones de costo/acceso, doc
 
 Recomendación: **web/HTML descargable + base offline + una conexión API opcional**. Confirmar esta dirección con el grupo antes de pasar a la prueba de viabilidad. La consola queda disponible como herramienta para experimentos, no como instalación obligatoria para docentes.
 
-Pendientes: devolución de la cátedra, dedicación del compañero, proveedor viable y utilidad de un eventual modelo pequeño. No se seleccionó proveedor ni se implementaron estas funciones al escribir este plan.
+Pendientes: devolución de la cátedra, dedicación del compañero, proveedor viable y validación del clasificador temático propuesto. No se seleccionó proveedor ni se implementaron estas funciones al escribir este plan.
+
+## Integración acordada para planificar
+
+Se adopta la propuesta del compañero como organizador temático, con [protocolo y datos piloto](CLASIFICADOR_TEMATICO.md). Las plantillas automáticas pasan a ampliación: se reemplaza una función prevista por un módulo de aprendizaje supervisado más vinculado a los ejercicios, sin ampliar indiscriminadamente la lista de tareas. No se inicia implementación real en esta actualización.
