@@ -12,9 +12,11 @@ Los textos propios pueden previsualizarse, pero no se interpretan ni generan pre
 
 ## Material del proyecto
 
-- [Propuesta para presentar](PROPUESTA_PARA_ENTREGA.md).
+- [Alcance común de presentación v0.2](ALCANCE_DE_LA_PROPUESTA.md).
+- [Propuesta consolidada v0.2](PROPUESTA_PARA_ENTREGA.md).
 - [Informe PDF de dos páginas](output/pdf/PROPUESTA_PARA_ENTREGA.pdf).
-- [Plan, alcance y diagrama](PLAN_DEL_PROYECTO.md).
+- [Requisitos, opciones y decisiones](DECISIONES_Y_OPCIONES.md).
+- [Plan consolidado, alcance y etapas](PLAN_DEL_PROYECTO.md).
 - [Guía para presentar la idea](GUIA_PARA_PRESENTAR.md).
 - [Contexto del integrador en la cátedra](docs/PROYECTO_INTEGRADOR_EN_LA_CATEDRA.md).
 - [Paquete de presentación descargable](AULA_PRESENTACION_HOY.zip).
@@ -24,11 +26,15 @@ Los textos propios pueden previsualizarse, pero no se interpretan ni generan pre
 
 Abrir `demo/index.html` en un navegador. Es un archivo independiente: no requiere instalación, servidor ni conexión a internet.
 
-## Alcance previsto
+## Dirección propuesta
 
-La versión con IA recibirá material textual, recuperará fragmentos pertinentes y utilizará un modelo preentrenado para proponer preguntas con referencias. El docente conservará la aprobación final. Se prevé trabajar representación del texto, similitud coseno, TF-IDF, embeddings, RAG y una evaluación pequeña de resultados. No se entrenará un modelo desde cero.
+Se recomienda una herramienta web/HTML descargable con dos modos: una base gratuita y offline para trabajar con material propio, y generación opcional mediante una clave API del usuario. Debe funcionar en equipos comunes y no depender de la Mac del grupo ni de un modelo de lenguaje local. Presupuesto del grupo: cero.
 
-La demo de presentación está implementada. El procesamiento real de documentos y la conexión con modelos de IA todavía no están implementados.
+La base prevista incluye preparación del texto, recuperación liviana, propuestas extractivas, edición y guardado/exportación. La asistencia externa contempla intercambio manual de solicitudes/preguntas y una API directa solo si se valida un proveedor. Consola, embeddings y un modelo pequeño propio son ampliaciones condicionadas a utilidad y plazo.
+
+El informe, PDF, demo y paquete de presentación corresponden a la versión 0.2 y comparten [el alcance de referencia](ALCANCE_DE_LA_PROPUESTA.md). Las opciones exploratorias se distinguen de las funciones comprometidas. La conexión API requiere una prueba previa; el intercambio manual con un asistente no se presenta como una conexión automática.
+
+La demo de presentación sigue usando preguntas preparadas. El procesamiento de material propio, el modo básico real y la conexión a IA todavía no se implementaron. No se eligió un proveedor definitivo.
 
 ## Publicación con GitHub Pages
 
@@ -43,3 +49,16 @@ python scripts/generar_informe.py
 ```
 
 Los archivos temporales de renderizado y los entornos locales se excluyen de Git.
+
+## Mantener coherencia entre propuesta, demo y entrega
+
+[ALCANCE_DE_LA_PROPUESTA.md](ALCANCE_DE_LA_PROPUESTA.md) distingue funciones mínimas, ampliaciones y lo que funciona hoy. Antes de presentar o cambiar el alcance, revisar informe, plan, demo y guion juntos. No atribuir una función prevista al prototipo actual.
+
+Después de modificar el informe, regenerar PDF y paquete:
+
+```bash
+python scripts/generar_informe.py
+python scripts/preparar_presentacion.py
+```
+
+Comprobar visualmente el PDF y la demo antes de empaquetar, y subir los cambios a GitHub para actualizar la demo pública. [VERSION_PRESENTACION.json](VERSION_PRESENTACION.json) registra versión y hashes de los archivos incluidos en el ZIP; no reemplaza la revisión de contenido.

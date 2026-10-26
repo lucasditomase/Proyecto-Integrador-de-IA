@@ -1,58 +1,60 @@
 # Aula: asistente para preparar exámenes multiple choice
 
 **Trabajo integrador · Inteligencia Artificial · Ingeniería en Informática · 2026**  
-**Propuesta inicial · 26 de octubre de 2026 · Grupo de dos integrantes**
+**Propuesta consolidada v0.2 · 26 de octubre de 2026 · Grupo de dos integrantes**
 
-## Problema y contexto
+## Problema y objetivo
 
-Preparar un examen requiere seleccionar contenidos, redactar preguntas y construir opciones de respuesta claras. Además, el docente debe comprobar que las respuestas sean correctas y que las preguntas correspondan al material enseñado.
+Preparar un examen requiere seleccionar contenidos, redactar preguntas y revisar opciones y claves. Proponemos una herramienta que ayude al docente a construir un examen multiple choice a partir de material textual propio. El objetivo es obtener preguntas revisables, con referencias al material y aprobación final del profesor.
 
-Proponemos un asistente que reciba material del profesor y prepare un borrador de examen multiple choice configurable. Cada pregunta incluirá respuestas sugeridas, una explicación y una referencia al contenido utilizado. El docente podrá revisar, editar, aceptar o descartar las preguntas antes de obtener el examen final.
+La herramienta tendrá un núcleo gratuito que funcione sin conexión ni clave API. La asistencia de un modelo generativo será opcional. El proyecto no dependerá de la Mac de los integrantes, de hardware potente ni de un servidor pago.
 
-## Qué vamos a hacer
+## Qué proponemos implementar
 
-El docente cargará material textual, seleccionará un tema y configurará la cantidad de preguntas. La primera versión tendrá cuatro opciones por pregunta y permitirá elegir una o dos respuestas correctas. Se obtendrán por separado el examen para estudiantes y la clave con fundamentos para el docente.
+Una interfaz HTML descargable, también publicable como página web, permitirá cargar TXT/Markdown o pegar texto, buscar contenido pertinente y crear un banco de preguntas. Cada pregunta tendrá cuatro opciones, una o dos respuestas correctas, fuente y un fundamento registrado durante la revisión.
 
-La herramienta buscará contenido pertinente dentro del material y lo proporcionará como contexto a un modelo de lenguaje preentrenado para generar las preguntas. Este procedimiento corresponde a generación aumentada por recuperación, o RAG. No se entrenará un modelo desde cero.
+El modo básico incluirá búsqueda sobre el material, edición manual y sugerencias extractivas sencillas mediante reglas, por ejemplo completar un término de una definición. El docente deberá revisar y completar las opciones y la clave. No se promete generación libre o razonamiento automático offline.
 
-## Cómo funcionará
+Se podrá editar, aprobar, descartar, guardar e importar un proyecto, y exportar por separado el examen y la clave. Estas funciones no requerirán pagos ni una cuenta externa.
 
-1. **Material:** extraer el texto y conservar la identificación del documento y sus secciones.
-2. **Representación:** dividir el contenido en fragmentos y representarlos numéricamente.
-3. **Recuperación:** comparar el tema solicitado con los fragmentos para seleccionar los pertinentes.
-4. **Generación:** utilizar esos fragmentos y la configuración para proponer preguntas con un modelo preentrenado.
-5. **Revisión:** mostrar opciones, clave, explicación y fuente para que el docente decida cuáles conservar.
-6. **Salida:** exportar las preguntas aprobadas y una clave docente separada.
+## Asistencia de IA opcional
 
-**Recorrido:** material del profesor → selección de contenido → preguntas configurables → revisión docente → examen y clave.
+La herramienta preparará un pedido estructurado con contenido seleccionado para utilizarlo en un asistente externo y permitirá importar preguntas en un formato definido. Este intercambio puede ser manual y no supone que la herramienta proporcione una cuenta o uso gratuito de un servicio externo.
+
+También evaluaremos una conexión directa por API con una clave propia del usuario. Antes de comprometer un proveedor comprobaremos que permita el acceso desde navegador, sus condiciones, cuotas y la calidad de las respuestas. Si resulta viable, integraremos un proveedor inicial; si no, conservaremos la modalidad manual y lo explicaremos a la cátedra. No se promete soporte para cualquier modelo ni gratuidad ilimitada de terceros.
+
+## Recorrido previsto
+
+1. **Material:** preparar el texto, dividirlo en fragmentos y conservar su origen.
+2. **Selección:** recuperar contenido pertinente para el tema solicitado.
+3. **Preguntas:** crear borradores mediante editor/plantillas o incorporar propuestas de un asistente externo.
+4. **Revisión:** comprobar contenido, opciones, claves y fuentes; aceptar, editar o descartar.
+5. **Salida:** guardar el proyecto y exportar examen y clave separados.
 
 ## Qué contenidos de la materia aplicaremos
 
-- **Representación, vectores y similitud:** utilizar producto escalar, norma y similitud coseno para comparar solicitudes y fragmentos. Se relaciona con las prácticas de vectores, embeddings y vecindad.
-- **Calidad de datos:** revisar la extracción, evitar duplicados y conservar la procedencia. Un texto incompleto o mal segmentado puede producir preguntas deficientes.
-- **Lenguaje natural:** trabajar con TF-IDF y embeddings para representar el material y recuperar contenido pertinente.
-- **IA generativa y RAG:** utilizar un modelo preentrenado con contexto documental y comprender la diferencia entre generación, recuperación y entrenamiento.
-- **Evaluación y análisis de errores:** comparar una referencia sencilla con otra alternativa y explicar los casos donde el sistema acierta o falla.
-- **Supervisión y límites:** mantener la aprobación del examen en el docente y no presentar una respuesta generada como garantía de corrección.
+- **Representación y calidad de datos:** extracción, segmentación, términos, duplicados y procedencia de la información.
+- **Vectores y similitud:** TF-IDF, producto escalar, norma y coseno para ordenar fragmentos respecto de una consulta.
+- **NLP y recuperación:** comparar una búsqueda por coincidencia simple con TF-IDF y analizar resultados y limitaciones.
+- **IA generativa y contexto:** preparar material seleccionado para un modelo preentrenado, comprender RAG y distinguir recuperación, generación e inferencia del entrenamiento.
+- **Evaluación y supervisión:** establecer una referencia, analizar errores, verificar restricciones y mantener la decisión final en el docente.
 
-La programación permitirá llevar estas ideas a un prototipo. El objetivo académico será demostrar que comprendemos las representaciones, la selección de información y la evaluación de una solución de IA útil.
+La programación será el medio para experimentar y construir la herramienta. Se busca demostrar conocimientos aplicados y explicar sus resultados, con el alcance de un integrador y no de una tesis. No se exige entrenar desde cero. Embeddings, un modelo pequeño propio o conectores adicionales quedan como posibles ampliaciones, sin incorporarlos por obligación.
 
-## Cómo comprobaremos que funciona
+## Cómo evaluaremos el resultado
 
-Usaremos inicialmente material acotado de tres unidades de la materia. Prepararemos pequeñas solicitudes de prueba y señalaremos qué fragmentos contienen información pertinente.
+Usaremos material acotado de tres unidades y solicitudes con fragmentos relevantes identificados. Compararemos coincidencia de términos y TF-IDF/coseno sobre las mismas consultas, reservando algunas para prueba final. Observaremos pertinencia de resultados y ejemplos de fallos.
 
-Compararemos dos formas de seleccionar contenido: **TF-IDF con similitud coseno**, como referencia inicial, y **embeddings preentrenados con similitud coseno**. Mantendremos el mismo generador e instrucciones para observar las diferencias. Si la alternativa sencilla resulta suficiente, también será una conclusión válida.
+Revisaremos una muestra pequeña de preguntas según claridad, corrección de la clave, correspondencia temática y respaldo documental. También comprobaremos cantidades de opciones/respuestas y que el examen no revele la clave. La revisión de ambos integrantes será una evaluación inicial, no una certificación pedagógica.
 
-La evaluación tendrá dos partes: comprobar si se recuperan fragmentos pertinentes y revisar una muestra pequeña de preguntas. En esa revisión observaremos corrección de la clave, claridad, correspondencia con el tema y respaldo de la explicación. También verificaremos automáticamente la cantidad de opciones y de respuestas marcadas. El cumplimiento del formato no garantiza la corrección conceptual.
+## Viabilidad y límites
 
-## Alcance y organización
+Dos integrantes trabajarán durante dos semanas como objetivo, con presupuesto del grupo cero. Primero se verificará la arquitectura y se completará el núcleo básico; después, la asistencia externa viable y las pruebas. Una copia descargada incluirá los recursos necesarios para las funciones offline; abrir por primera vez la página publicada requiere internet.
 
-El desarrollo está previsto para dos semanas entre dos integrantes. La primera semana se dedicará a material, representación y búsqueda; la segunda, a generación, revisión y pruebas. Se priorizará un flujo completo y sencillo.
+No se incluyen en el mínimo OCR, imágenes, fórmulas, PDF, corrección de alumnos, dificultad pedagógica automática, cuentas ni una plataforma completa. No será obligatorio instalar un modelo de lenguaje local. Cualquier modificación sustancial del alcance se documentará para revisión de la cátedra.
 
-Comenzaremos con HTML o texto y, si el tiempo lo permite, PDF con texto seleccionable. No incluiremos OCR, interpretación de imágenes o fórmulas, corrección de alumnos, cuentas de usuario ni una plataforma educativa completa. Tampoco intentaremos determinar automáticamente la dificultad pedagógica de una pregunta.
+## Qué muestra la demo de hoy
 
-## Prototipo para esta presentación
+La demo v0.2 muestra material, configuración de modo básico/asistido, revisión, edición, aprobación y exportación. Usa un apunte y preguntas preparados: no genera contenido nuevo, no procesa material propio mediante IA ni solicita claves reales. La selección de modo explica el flujo previsto, pero ambos recorridos usan los mismos ejemplos.
 
-Se acompaña una demo HTML local que permite recorrer carga de material, configuración, revisión, edición, aprobación y exportación de preguntas. Utiliza un apunte y un banco de preguntas preparados de antemano: **no tiene IA conectada ni genera preguntas nuevas**. Su propósito es comunicar cómo se usaría la herramienta y recibir una devolución temprana de la cátedra.
-
-El resultado final previsto es un prototipo funcional con IA, una comparación breve de los métodos y ejemplos que permitan explicar las decisiones, los errores y las limitaciones encontradas.
+El producto final aún no está implementado. La presentación distingue expresamente las funciones demostradas, el mínimo propuesto y las conexiones pendientes de validación.

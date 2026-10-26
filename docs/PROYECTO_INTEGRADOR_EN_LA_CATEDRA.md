@@ -11,7 +11,7 @@ El recorrido del integrador combina elegir un problema, investigar viabilidad, d
 ## Estado confirmado
 
 - El trabajo será de dos integrantes: el estudiante y un amigo.
-- Se preparó una propuesta de trabajo sobre un generador configurable de preguntas multiple choice a partir de material docente, comparando recuperación TF-IDF y embeddings. Es la elección recomendada para presentar y discutir, pendiente de conformidad del compañero y revisión de la cátedra.
+- La propuesta vigente v0.2 es un asistente de exámenes con base gratuita/offline y asistencia externa opcional. La comparación mínima es búsqueda por coincidencia simple frente a TF-IDF/coseno. Embeddings y un modelo propio son ampliaciones. La propuesta se presentará para revisión de la cátedra.
 - La fase actual es diagramar, planear, discutir y opinar. La implementación real sigue pendiente; autorizó una demo HTML sin IA para presentar hoy.
 - No hay respuestas personales confirmadas del estudiante a las preguntas del integrador. El documento nuevo propone una formulación revisable.
 - Hay un alcance y diagrama propuestos; faltan corpus exacto, modelos disponibles, horas semanales. El estudiante confirmó que no hay requisito de entrenar desde cero y se permiten preentrenados.
@@ -76,3 +76,11 @@ Si se continúa con evaluaciones educativas, explicitar qué tarea de IA se estu
 ## Aclaración de alcance y presentación del 26 de octubre
 
 El estudiante confirmó que no es una tesis: es un integrador, algo más elaborado que una tarea práctica. No se necesita un estudio extraordinario ni entrenar modelos desde cero. Se permite usar preentrenados. Para hoy solicitó un informe y un prototipo HTML sencillo e interactivo, aunque todavía no use IA. Se prepararon ambos; la demo está identificada como simulación y utiliza un banco de preguntas de ejemplo. El plan se redujo a un flujo útil y pruebas pequeñas. Consultar la propuesta y el plan en la raíz de este repositorio. La demo se publica en GitHub Pages. No se subió nada a la plataforma de entrega de la cátedra.
+
+## Consolidación posterior de requisitos
+
+Se confirmó presupuesto cero, uso en equipos comunes y ausencia de dependencia de la Mac del estudiante. Se discutieron web, consola, modelos pequeños, claves propias y un modo básico útil offline. La recomendación actual, aún para decidir con el grupo, es web/HTML descargable con núcleo offline y API opcional. No se implementaron esas funciones. Consultar [opciones y requisitos](../DECISIONES_Y_OPCIONES.md) y [plan consolidado](../PLAN_DEL_PROYECTO.md). El informe y PDF se actualizaron a v0.2, junto con la demo y el paquete. Consultar [el alcance común](../ALCANCE_DE_LA_PROPUESTA.md) para distinguir mínimo, opciones y estado real.
+
+## Coherencia de presentación v0.2
+
+El [alcance común](../ALCANCE_DE_LA_PROPUESTA.md) define las funciones propuestas para el mínimo y las dependencias pendientes. El informe, PDF, demo, guion y paquete se mantienen alineados. La demo sigue siendo una simulación; no implica que se haya implementado el producto final.

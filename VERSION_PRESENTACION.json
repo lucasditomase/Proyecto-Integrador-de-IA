@@ -1,0 +1,16 @@
+{
+  "version": "0.2",
+  "fecha": "2026-10-26",
+  "estado": "propuesta y demo simulada; producto final no implementado",
+  "alcance": "ALCANCE_DE_LA_PROPUESTA.md",
+  "sha256": {
+    "ALCANCE_DE_LA_PROPUESTA.md": "f8f549969ce83f77255107fb726b89f4d1584a8d9d7255cde5b1e231c37b0eeb",
+    "PROPUESTA_PARA_ENTREGA.md": "e64359581c8dbeafda7afee6fa8d0ba3dcdf0bd77f1a0f2ef2f462c5bdacbd6e",
+    "output/pdf/PROPUESTA_PARA_ENTREGA.pdf": "19ad28182319b1306671fae6e9f8526deafd8ff9214a2750cdec0ff65321057f",
+    "PLAN_DEL_PROYECTO.md": "47458dc1ce9c0008958f3062127f54cbfb9c1da97ddfb83c3be5f98f02a34ff9",
+    "DECISIONES_Y_OPCIONES.md": "fe337b5f6a95a95ecf5be10e01a410c281ab0c704078261f8934b4ef353642ed",
+    "GUIA_PARA_PRESENTAR.md": "5e00f8ccefda960e857f642f6e3b51ee63e2f3dc4f6c3d1e7f70c827e6a74908",
+    "demo/index.html": "b73d677524f05c17186075c28282b73d14a9898469556e83e1dbc295d082ce4c",
+    "demo/preview.png": "f034627b162e2141e085a69ede587f042d4ae4fbc3dec942d0d7c5df39dcce36"
+  }
+}

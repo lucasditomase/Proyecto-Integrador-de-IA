@@ -1,92 +1,121 @@
-# Aula: plan del trabajo integrador
+# Aula: plan consolidado del integrador
 
-Actualizado: 26 de octubre de 2026. Este documento reemplaza el plan inicial más amplio, a partir de las aclaraciones del estudiante.
+**Versión:** 26 de octubre de 2026, después de acordar presupuesto cero y explorar web, consola, modelos pequeños y claves propias.  
+**Estado:** plan recomendado para decidir. No se inició la implementación real.
 
-## Condiciones confirmadas
+## 1. Punto de partida
 
-- Trabajo integrador de dos personas; no es una tesis ni un proyecto de investigación de gran escala.
-- Debe aplicar conocimientos de la cátedra a una herramienta útil y permitir explicar decisiones y resultados.
-- La cátedra permite modelos preentrenados y no exige entrenar uno propio desde cero.
-- Hoy, 26 de octubre, hay que presentar la propuesta y una demostración sencilla para recibir devolución.
-- La entrega de la propuesta cierra el 30 de octubre a las 00:00: conviene subirla durante el jueves 29.
-- El desarrollo apunta a dos semanas, hasta el 9 de noviembre, con margen máximo orientativo hasta el 16. Estas últimas son fechas internas, no vencimientos oficiales.
-- El estudiante autorizó ahora construir una demo interactiva sin IA. La implementación del sistema real sigue pendiente de la devolución y de acordar el siguiente paso.
+El [documento de decisiones y opciones](DECISIONES_Y_OPCIONES.md) es la referencia para requisitos y alternativas. El [alcance de presentación v0.2](ALCANCE_DE_LA_PROPUESTA.md) se comparte con el informe, PDF, demo y paquete. La versión inicial queda en el historial de Git.
 
-## Proyecto propuesto
+Objetivo: herramienta para elaborar exámenes multiple choice con material docente, revisión y exportación. Dos personas, dos semanas como objetivo, máximo orientativo de tres. Cero gastos del grupo y un recorrido gratuito sin clave para los docentes.
 
-Asistente para preparar exámenes multiple choice a partir de material docente. El profesor elige tema, cantidad de preguntas y una o dos respuestas correctas entre cuatro opciones. Revisa preguntas, fundamentos y fuentes antes de exportar.
+La demo pública actual usa preguntas preparadas. No representa una implementación de procesamiento real, recuperación ni IA.
 
-La utilidad principal es obtener un borrador verificable. El trabajo académico consiste en representar contenido, recuperar fragmentos pertinentes, usar generación con contexto y analizar resultados. La comparación TF-IDF/embeddings es una experiencia acotada que apoya la explicación, no el objetivo de demostrar una contribución científica.
+## 2. Alcance recomendado
 
-## Recorrido funcional
+### Primera versión
 
-```mermaid
-flowchart LR
-    A[Material docente] --> B[Texto y fragmentos identificados]
-    B --> C[Representación y búsqueda por similitud]
-    D[Tema y configuración] --> C
-    C --> E[Modelo preentrenado con contexto]
-    E --> F[Preguntas, clave, fundamento y fuente]
-    F --> G[Revisión y edición docente]
-    G --> H[Examen y clave separados]
-```
+1. Interfaz HTML/JavaScript utilizable desde navegador y como copia descargada.
+2. Material propio mediante TXT/Markdown o texto pegado.
+3. Fragmentos con procedencia y búsqueda liviana mediante TF-IDF/coseno.
+4. Editor de preguntas con cuatro opciones y una/dos respuestas correctas.
+5. Borradores extractivos sencillos sujetos a revisión, no generación semántica offline.
+6. Guardado e importación de un proyecto, y examen/clave separados.
+7. Preparación e importación de un intercambio manual con un asistente externo; una integración API directa solo si pasa la prueba de viabilidad.
+8. Casos de evaluación y explicación del procedimiento.
 
-## Qué se hará y cómo
+### Ampliaciones condicionadas
 
-| Parte | Implementación prevista | Relación con la materia |
+PDF con texto seleccionable, embeddings, un clasificador propio, consola de usuario, integración con agentes, PWA y más proveedores. Elegir solo lo que tenga utilidad comprobable y tiempo disponible.
+
+### Fuera del objetivo
+
+Entrenar un LLM, exigir hardware potente, servidor pago, cuentas de alumnos, corrección automática de estudiantes, predicción de dificultad pedagógica, OCR y una plataforma educativa completa.
+
+## 3. Prueba de viabilidad antes de fijar arquitectura
+
+Duración propuesta: una sesión corta de desarrollo, una vez autorizado ese paso.
+
+| Comprobación | Resultado necesario | Si falla |
 |---|---|---|
-| Preparar material | Extraer HTML/texto, limpiar navegación, dividir por secciones y conservar origen. | Representación y calidad de datos. |
-| Buscar contenido | TF-IDF y coseno como referencia; embeddings y coseno como alternativa. | Vectores, normas, similitud, vecindad y NLP. |
-| Generar preguntas | Un modelo preentrenado recibe contexto y formato solicitado. | Transformers, generación y RAG; distinguir inferencia de entrenamiento. |
-| Comprobar y revisar | Verificar estructura y cantidad de claves; mostrar evidencia para revisión humana. | Evaluación, tipos de error y supervisión. |
-| Analizar | Probar pequeñas solicitudes, comparar resultados y explicar fallos. | Baseline, experimentación y dominio de validez. |
+| Recorrido básico | Abrir texto propio y recuperar fragmentos sin servicios externos. | Simplificar formato y corpus. |
+| Acceso API | Un proveedor permite una solicitud desde el navegador con clave de usuario y devuelve salida utilizable. | Probar una alternativa autorizada o exportación/importación; evaluar consola/intermediario mínimo solo si es necesario. |
+| Presupuesto | La prueba no requiere pagos del grupo; existe una vía de evaluación sin gasto. | No contratar ni consumir una API paga; revisar alcance conectado. |
+| Salida | Las preguntas pueden convertirse al formato común y corregirse en el editor. | Reducir estructura solicitada o elegir otro modelo. |
+| Portabilidad | El recorrido básico no depende de macOS ni de recursos específicos del equipo. | Quitar la dependencia o reconsiderar distribución. |
 
-No llamaremos clasificación K-NN al simple ranking documental sin etiquetas. No incorporaremos clustering, redes entrenadas propias o algoritmos genéticos solo para sumar técnicas.
+No intentar resolver una restricción de uso de un proveedor reutilizando credenciales de otra aplicación ni eludiendo sus condiciones. No hacer públicas claves ni pedirlas en el chat. La prueba deberá usar un acceso dispuesto específicamente para ella.
 
-## Alcance mínimo y límites
+Decisión de salida: confirmar web + API directa, o documentar una alternativa antes de construir el sistema completo. Por ahora ninguna conexión está comprobada.
 
-Incluye material textual de tres unidades, una sola conexión generativa, cuatro opciones y una/dos respuestas correctas, revisión y exportación simple. PDF con texto seleccionable queda sujeto al tiempo disponible.
+## 4. Etapas y resultados revisables
 
-Quedan fuera OCR, manuscritos, análisis de imágenes/fórmulas, dificultad pedagógica automática, corrección de alumnos, personalización adaptativa, cuentas, campus virtual y despliegue público.
+| Etapa | Trabajo | Criterio de finalización |
+|---|---|---|
+| A. Decidir | Revisar este documento con el compañero y la devolución de la cátedra. | Interfaz principal, alcance mínimo y reparto acordados. |
+| B. Viabilidad | Comprobar procesamiento local liviano y una conexión de IA posible. | Registro de resultados y decisión de arquitectura. |
+| C. Base offline | Texto propio, búsqueda, editor, configuración, guardado y exportación. | Crear y terminar un examen nuevo sin clave y sin conexión. |
+| D. Asistencia básica | Extraer candidatos y construir plantillas sencillas con referencias. | Propuestas sobre material real, editables y claramente pendientes de revisión. |
+| E. IA opcional | Clave de sesión, contexto seleccionado, salida estructurada y manejo de errores. | Añadir preguntas usando una conexión compatible, sin bloquear el modo básico. |
+| F. Evaluar | Probar casos reservados, revisar preguntas y explicar errores. | Comparación pequeña y resultados trazables. |
+| G. Entregar | Instrucciones, versión descargable, demo y exposición. | Otra persona puede recorrer el flujo sin ayuda técnica extensa. |
 
-No se presupone GPU ni un proveedor específico. Se comprobará una integración disponible con una solicitud pequeña antes de construir alrededor de ella. La selección de modelo y costos sigue pendiente; el permiso académico para usar preentrenados ya está confirmado.
+No se trabaja primero en conectores múltiples ni en una interfaz elaborada. La versión offline completa es el primer resultado útil; el contenido académico de búsqueda y selección no debe quedar reducido a un editor genérico.
 
-## Pruebas proporcionadas al alcance
+## 5. Contenidos y evidencia académica
 
-1. Elegir tres unidades y revisar que el texto extraído conserve significado.
-2. Preparar algunas solicitudes literales y otras expresadas como paráfrasis. Anotar qué fragmentos deberían recuperarse.
-3. Usar solicitudes de desarrollo para ajustar la segmentación y reservar otras para la comparación final.
-4. Comparar TF-IDF y embeddings con las mismas solicitudes; observar si aparece evidencia pertinente y en qué posición.
-5. Mantener el mismo generador e instrucciones para comparar preguntas. Una muestra inicial de unas 20 preguntas revisadas puede ser suficiente para detectar problemas y preparar el informe; ajustar la cantidad al tiempo real disponible.
-6. Revisar clave, claridad, tema, respaldo y formato. Registrar cuáles se aceptarían, editarían o descartarían y por qué.
+| Contenido | Aplicación | Evidencia |
+|---|---|---|
+| Representación y calidad | Texto, fragmentos y metadatos. | Ejemplos de extracción/segmentación correcta e incorrecta. |
+| Álgebra vectorial | TF-IDF, producto escalar, norma y coseno. | Ejemplo calculado y ranking de fragmentos. |
+| Baseline y evaluación | Comparar coincidencia simple de términos con TF-IDF/coseno. | Mismas consultas, referencias relevantes y análisis de errores. |
+| NLP y RAG | Seleccionar contexto antes de generar con un modelo preentrenado. | Fragmentos enviados, preguntas y respaldo observado. |
+| Clasificación, si aporta valor | Un modelo pequeño para una tarea definida. | Datos etiquetados, partición adecuada, baseline y matriz de confusión. |
+| Sistema y supervisión | Controles estructurales, edición y conservación del trabajo ante fallas. | Casos inválidos, errores de API y límites documentados. |
 
-Ambos integrantes revisarán la muestra y discutirán diferencias consultando las fuentes. Una revisión docente sería valiosa, pero no se da por confirmada. La revisión interna no demuestra eficacia pedagógica ni dificultad real. No hace falta un estudio estadístico amplio ni prometer que un método superará al otro.
+La comparación TF-IDF/embeddings explorada inicialmente queda como ampliación posible. No es obligatorio incluir embeddings si ello contradice el modo offline liviano o el presupuesto. Una comparación sencilla bien realizada sigue siendo valiosa.
 
-## Cronograma y reparto
+## 6. Evaluación proporcionada
 
-| Etapa | Resultado |
-|---|---|
-| Hoy | Informe breve y demo sin IA, listos para presentar. |
-| Después de la devolución | Ajustar alcance, elegir corpus y comprobar acceso al modelo. |
-| Semana 1 | Texto limpio, fragmentos, representaciones y búsqueda funcionando. |
-| Semana 2 | Generación, revisión, exportación y pequeña evaluación con ejemplos. |
-| Margen de semana 3 | Corregir problemas y atender observaciones; no ampliar funciones por defecto. |
+Usar material acotado de tres unidades y algunas consultas literales y paráfrasis. Preparar referencias de fragmentos pertinentes antes de comparar métodos. Reservar consultas para evaluación final y evitar ajustar todo sobre ellas.
 
-Un integrante puede concentrarse en material/recuperación y otro en generación/revisión. Ambos deben participar en las pruebas y comprender el procedimiento completo. El reparto personal y las horas disponibles deben acordarse con el compañero.
+Revisar una muestra pequeña de preguntas, inicialmente del orden de 20 entre los modos disponibles. Registrar corrección de clave, claridad, tema, respaldo y cambios necesarios. Ambos integrantes revisan y contrastan discrepancias con el material. No presentar esta revisión como validación pedagógica general ni atribuir confianza estadística a una muestra pequeña.
 
-## Riesgos prácticos y respuesta
+Si se entrena un clasificador, separar su evaluación de la del generador: identificar el tema no demuestra que una pregunta sea correcta. Si no hay datos y una función útil, no añadirlo.
 
-- **Extracción difícil:** mantener HTML/texto y postergar PDF.
-- **Generación incorrecta:** mostrar fundamento, conservar revisión y permitir descarte.
-- **Acceso al modelo:** verificar temprano disponibilidad y presupuesto; reducir volumen o cambiar una integración si fuera necesario.
-- **Poco tiempo:** conservar el flujo completo y recortar interfaz y formatos secundarios.
-- **Respaldo insuficiente:** informar que no hay material suficiente para la pregunta solicitada.
+## 7. Criterios de aceptación del producto
 
-## Material listo para hoy
+- Con un documento propio se puede construir, revisar, guardar y exportar un examen sin API.
+- La copia descargada funciona sin red para el recorrido básico y no solicita recursos externos obligatorios.
+- Cambiar la cantidad de respuestas correctas se refleja en instrucciones y validaciones estructurales.
+- El examen para estudiantes no revela la clave ni explicaciones docentes.
+- Reabrir el archivo de proyecto conserva las preguntas, claves y referencias; las claves API no se exportan.
+- Una falla de IA no borra el trabajo ni obliga a contratar un servicio.
+- El modo conectado identifica el proveedor y obtiene aprobación antes de enviar contenido.
+- Se distingue una referencia existente de una referencia que realmente respalda una afirmación.
+- Hay un conjunto pequeño de ejemplos que permite explicar qué se aplicó y qué limitaciones existen.
 
-- [Informe editable](PROPUESTA_PARA_ENTREGA.md).
-- [Informe PDF](output/pdf/PROPUESTA_PARA_ENTREGA.pdf).
-- [Demo HTML independiente](demo/index.html).
-- [Guion y pasos de demostración](GUIA_PARA_PRESENTAR.md).
+## 8. Organización de las dos semanas
 
-La demo usa ejemplos preparados y no tiene IA conectada. La carga permite previsualizar texto local; para construir el examen simulado se utiliza el apunte incorporado. No hay almacenamiento persistente ni envío de archivos a servicios externos. Todavía no se subió ningún archivo a la entrega de la cátedra.
+Fechas orientativas: objetivo interno 9 de noviembre de 2026, margen hasta el 16. La entrega de la propuesta inicial cierra el 30 de octubre a las 00:00, según el aviso recibido. No son fechas oficiales nuevas del trabajo final.
+
+- **Primer tramo:** decidir y probar viabilidad; no instalar componentes ni comprometer gastos sin necesidad.
+- **Semana 1:** núcleo offline, representación, búsqueda, editor y formato común de preguntas.
+- **Semana 2:** asistencia extractiva, integración API viable, evaluación e instrucciones.
+- **Margen:** correcciones y devolución; no añadir funciones por defecto.
+
+Reparto propuesto: una persona trabaja en datos/búsqueda/evaluación y otra en editor/exportación/conexión. Ambas participan en diseño, pruebas y defensa. Los nombres, responsabilidades y horas reales todavía deben acordarse.
+
+## 9. Política de recorte
+
+Conservar: material real, recuperación explicable, banco editable, referencias, guardado/exportación y evaluación.
+
+Recortar primero: apariencia avanzada, PDF, conectores de agentes, múltiples proveedores, PWA y modelo propio opcional.
+
+Si la integración externa no funciona bajo las condiciones de costo/acceso, documentarlo y revisar con la cátedra qué alcance demuestra suficientemente la aplicación de IA. No sustituir una función prometida por una simulación sin explicitarlo.
+
+## 10. Siguiente decisión
+
+Recomendación: **web/HTML descargable + base offline + una conexión API opcional**. Confirmar esta dirección con el grupo antes de pasar a la prueba de viabilidad. La consola queda disponible como herramienta para experimentos, no como instalación obligatoria para docentes.
+
+Pendientes: devolución de la cátedra, dedicación del compañero, proveedor viable y utilidad de un eventual modelo pequeño. No se seleccionó proveedor ni se implementaron estas funciones al escribir este plan.
