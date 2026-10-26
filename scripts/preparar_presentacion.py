@@ -8,6 +8,8 @@ BASE = Path(__file__).resolve().parents[1]
 ARCHIVOS = [
     "ALCANCE_DE_LA_PROPUESTA.md",
     "CLASIFICADOR_TEMATICO.md",
+    "docs/ESTADO_Y_CONTINUIDAD.md",
+    "docs/MANTENIMIENTO.md",
     "datos/piloto_clasificacion.json",
     "PROPUESTA_PARA_ENTREGA.md",
     "output/pdf/PROPUESTA_PARA_ENTREGA.pdf",

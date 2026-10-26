@@ -56,7 +56,7 @@ Decisión de salida: confirmar web + API directa, o documentar una alternativa a
 | B. Viabilidad | Comprobar procesamiento local liviano y una conexión de IA posible. | Registro de resultados y decisión de arquitectura. |
 | C. Base offline | Texto propio, búsqueda, editor, configuración, guardado y exportación. | Crear y terminar un examen nuevo sin clave y sin conexión. |
 | D. Clasificador temático | Revisar etiquetas, comparar palabras clave con TF-IDF/regresión logística y preparar inferencia liviana. | Categorías delimitadas, evaluación por grupos y predicción revisable; sin exigir Python al docente. |
-| E. IA opcional | Clave de sesión, contexto seleccionado, salida estructurada y manejo de errores. | Añadir preguntas usando una conexión compatible, sin bloquear el modo básico. |
+| E. Asistencia externa | Pedido e importación manual estructurada; API con clave de sesión solo si se valida. | Añadir preguntas externas revisables sin bloquear el modo básico; documentar si el intercambio es manual o conectado. |
 | F. Evaluar | Probar casos reservados, revisar preguntas y explicar errores. | Comparación pequeña y resultados trazables. |
 | G. Entregar | Instrucciones, versión descargable, demo y exposición. | Otra persona puede recorrer el flujo sin ayuda técnica extensa. |
 

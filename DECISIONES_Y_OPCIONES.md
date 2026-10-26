@@ -58,11 +58,12 @@ flowchart TD
     A[HTML en navegador o copia descargada] --> B[Material propio y configuración]
     B --> C[Preparación, fragmentos y referencias]
     C --> D[Búsqueda y selección de contenido]
-    D --> E[Modo básico: propuestas extractivas y editor]
-    D --> F[Modo opcional: API con clave del usuario]
+    D --> E[Modo básico: editor y preguntas propias]
+    D --> F[Asistencia externa: intercambio manual o API validada]
     E --> G[Banco de preguntas con formato común]
     F --> G
-    G --> H[Revisión y corrección docente]
+    G --> T[Clasificador temático propuesto y corrección manual]
+    T --> H[Revisión y corrección docente]
     H --> I[Guardar proyecto, examen y clave]
 ```
 

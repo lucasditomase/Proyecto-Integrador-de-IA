@@ -2,6 +2,8 @@
 
 Asistente para preparar exámenes multiple choice a partir de material docente. Trabajo integrador grupal de **Inteligencia Artificial · Ingeniería en Informática · 2026**.
 
+Para retomar sin el chat: [estado, decisiones y pendientes](docs/ESTADO_Y_CONTINUIDAD.md), [mantenimiento](docs/MANTENIMIENTO.md) e [instrucciones para agentes](AGENTS.md).
+
 ## Demo pública
 
 **[Abrir la demo en GitHub Pages](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/)**
@@ -40,7 +42,7 @@ La demo de presentación sigue usando preguntas preparadas. El procesamiento de 
 
 ## Publicación con GitHub Pages
 
-El workflow [pages.yml](.github/workflows/pages.yml) publica únicamente `demo/` al actualizar `main`. Los documentos del integrador se consultan en el repositorio. La publicación se realiza con GitHub Actions y puede ejecutarse manualmente desde la pestaña Actions.
+El workflow [pages.yml](.github/workflows/pages.yml) publica únicamente `demo/` al actualizar `main` con cambios en `demo/**` o en el propio workflow. Los cambios solo documentales no disparan ese despliegue. Los documentos del integrador se consultan en el repositorio. La publicación se realiza con GitHub Actions y puede ejecutarse manualmente desde la pestaña Actions.
 
 ## Regenerar el informe (opcional)
 
