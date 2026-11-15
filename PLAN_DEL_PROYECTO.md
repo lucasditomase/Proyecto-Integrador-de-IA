@@ -1,11 +1,12 @@
 # Aula: plan consolidado del integrador
 
-**Versión:** 26 de octubre de 2026, después de acordar presupuesto cero y explorar web, consola, modelos pequeños y claves propias.  
-**Estado:** plan recomendado para decidir. No se inició la implementación real.
+**Revisión:** 15 de noviembre de 2026, tras contrastar el alcance v0.3 con los 22 laboratorios.
+
+**Estado:** planificación previa a la implementación.
 
 ## 1. Punto de partida
 
-El [documento de decisiones y opciones](DECISIONES_Y_OPCIONES.md) es la referencia para requisitos y alternativas. El [alcance de presentación v0.3](ALCANCE_DE_LA_PROPUESTA.md) se comparte con el informe, PDF, demo y paquete. La versión inicial queda en el historial de Git.
+El [documento de decisiones y opciones](DECISIONES_Y_OPCIONES.md) es la referencia para requisitos y alternativas. El [alcance de presentación v0.3](ALCANCE_DE_LA_PROPUESTA.md) se comparte con el informe, PDF, demo y paquete. La [verificación previa a implementar](docs/VERIFICACION_PREVIA_A_IMPLEMENTAR.md) vincula los hitos con las evidencias de la cátedra.
 
 Objetivo: herramienta para elaborar exámenes multiple choice con material docente, revisión y exportación. Dos personas, dos semanas como objetivo, máximo orientativo de tres. Cero gastos del grupo y un recorrido gratuito sin clave para los docentes.
 
@@ -34,7 +35,7 @@ Entrenar un LLM, exigir hardware potente, servidor pago, cuentas de alumnos, cor
 
 ## 3. Prueba de viabilidad antes de fijar arquitectura
 
-Duración propuesta: una sesión corta de desarrollo, una vez autorizado ese paso.
+Primer trabajo de desarrollo: comprobar que el HTML descargado abre con los recursos incluidos, que admite texto propio y que permite leer y descargar un archivo sin red. Acordar en paralelo el corpus y los contratos de archivo.
 
 | Comprobación | Resultado necesario | Si falla |
 |---|---|---|
@@ -42,7 +43,7 @@ Duración propuesta: una sesión corta de desarrollo, una vez autorizado ese pas
 | Intercambio externo mínimo | El pedido y las preguntas importadas tienen un formato verificable y revisable. | Simplificar formato sin exigir una API. |
 | API directa opcional | Solo si se intenta: acceso permitido desde navegador con clave propia y una prueba sin pago del grupo. | Conservar intercambio manual y documentar que no hay conexión directa. |
 | Presupuesto | La prueba no requiere pagos del grupo; existe una vía de evaluación sin gasto. | No contratar ni consumir una API paga; revisar alcance conectado. |
-| Salida | Las preguntas pueden convertirse al formato común y corregirse en el editor. | Reducir estructura solicitada o elegir otro modelo. |
+| Salida | Un candidato de prueba válido entra en el editor y uno inválido deja intacto el proyecto abierto. | Simplificar el formato y conservar validación y revisión docente. |
 | Portabilidad | El recorrido básico no depende de macOS ni de recursos específicos del equipo. | Quitar la dependencia o reconsiderar distribución. |
 
 No intentar resolver una restricción de uso de un proveedor reutilizando credenciales de otra aplicación ni eludiendo sus condiciones. No hacer públicas claves ni pedirlas en el chat. La prueba deberá usar un acceso dispuesto específicamente para ella.
@@ -53,8 +54,8 @@ Decisión de salida: validar el núcleo local y el intercambio manual; la API di
 
 | Etapa | Trabajo | Criterio de finalización |
 |---|---|---|
-| A. Decidir | Revisar este documento con el compañero y la devolución de la cátedra. | Interfaz principal, alcance mínimo y reparto acordados. |
-| B. Viabilidad | Comprobar procesamiento local liviano, exportación de modelo e intercambio manual; API solo si se intenta. | Registro de resultados, requisitos de navegador y decisión de arquitectura sin pago obligatorio. |
+| A. Organizar | Acordar reparto y disponibilidad. Consultar el EVA o la cátedra por el formato y la fecha final. | Responsables acordados y estado de la entrega registrado. |
+| B. Viabilidad | Probar HTML local y fijar formato de proyecto, preguntas y fuentes. En paralelo, revisar etiquetas y preparar casos reservados. | Prueba local registrada y datos/contratos descritos antes del ajuste. |
 | C. Base offline | Texto propio, búsqueda, editor, configuración, guardado y exportación. | Crear y terminar un examen nuevo sin clave y sin conexión. |
 | D. Clasificador temático | Revisar etiquetas, comparar palabras clave con TF-IDF/regresión logística y preparar inferencia liviana. | Categorías delimitadas, evaluación por grupos y predicción revisable; sin exigir Python al docente. |
 | E. Asistencia externa | Pedido e importación manual estructurada; API con clave de sesión solo si se valida. | Añadir preguntas externas revisables sin bloquear el modo básico; documentar si el intercambio es manual o conectado. |
@@ -72,40 +73,41 @@ No se trabaja primero en conectores múltiples ni en una interfaz elaborada. La 
 | Baseline y evaluación | Comparar coincidencia simple de términos con TF-IDF/coseno. | Mismas consultas, referencias relevantes y análisis de errores. |
 | NLP y RAG | Seleccionar contexto antes de generar con un modelo preentrenado. | Fragmentos enviados, preguntas y respaldo observado. |
 | Clasificación temática propuesta | Organizar preguntas de tres temas con TF-IDF/regresión logística. | Revisión de etiquetas, partición por grupos, baseline y matriz de confusión. |
-| Sistema y supervisión | Controles estructurales, edición y conservación del trabajo ante fallas. | Casos inválidos, errores de API y límites documentados. |
+| Sistema y supervisión | Controles estructurales, edición y conservación del trabajo ante fallas. | Matriz de riesgos, casos inválidos o sin respaldo, control docente y acción ante cambios en las entradas. |
 
 La comparación TF-IDF/embeddings explorada inicialmente queda como ampliación posible. No es obligatorio incluir embeddings si ello contradice el modo offline liviano o el presupuesto. Una comparación sencilla bien realizada sigue siendo valiosa.
 
 ## 6. Evaluación proporcionada
 
-Usar material acotado de tres unidades y algunas consultas literales y paráfrasis. Preparar referencias de fragmentos pertinentes antes de comparar métodos. Reservar consultas para evaluación final y evitar ajustar todo sobre ellas.
+Usar material acotado de tres unidades. Identificar de antemano los fragmentos pertinentes y reservar consultas literales, paráfrasis y un caso sin respaldo. Comparar coincidencia de términos y TF-IDF/coseno con las mismas consultas y el mismo valor de k. Reportar Precision@k o MRR, ejemplos de error y la decisión que se tomó a partir de ellos.
 
 Revisar una muestra pequeña de preguntas, inicialmente del orden de 20 entre los modos disponibles. Registrar corrección de clave, claridad, tema, respaldo y cambios necesarios. Ambos integrantes revisan y contrastan discrepancias con el material. No presentar esta revisión como validación pedagógica general ni atribuir confianza estadística a una muestra pequeña.
 
-El [diseño del clasificador](CLASIFICADOR_TEMATICO.md) y sus 30 ejemplos piloto están preparados para revisión; no hay un modelo entrenado. Separar su evaluación de la del generador: identificar el tema no demuestra que una pregunta sea correcta. Si los datos no sostienen la tarea, revisar el alcance antes de comprometer resultados.
+El [diseño del clasificador](CLASIFICADOR_TEMATICO.md) y sus 30 ejemplos piloto están preparados para revisión; no hay un modelo entrenado. Revisar etiquetas y añadir ejemplos independientes. Acordar particiones por grupos antes de ajustar vocabulario y modelo. Comparar palabras clave y regresión logística en los mismos casos reservados, con matriz de confusión, macro-F1 y cantidad de casos por clase. Comprobar que Python y JavaScript coinciden sobre entradas de prueba.
+
+Para la defensa, guardar versión de datos y código, particiones, configuración, comando de reproducción, resultados, un error representativo y su límite. El JSON acumulativo de la cátedra registra avances académicos. El archivo de Aula guarda el examen en edición.
 
 ## 7. Criterios de aceptación del producto
 
 - Con un documento propio se puede construir, revisar, guardar y exportar un examen sin API.
-- La copia descargada funciona sin red para el recorrido básico y no solicita recursos externos obligatorios.
+- La copia descargada permite completar el recorrido sin red con los recursos incorporados. Registrar sistema, navegador, tamaño del archivo y tiempos al probar Windows, macOS y Linux.
 - Cambiar la cantidad de respuestas correctas se refleja en instrucciones y validaciones estructurales.
-- El examen para estudiantes no revela la clave ni explicaciones docentes.
+- El archivo del alumno excluye las respuestas marcadas y los fundamentos, también en el código fuente del HTML.
 - Reabrir el archivo de proyecto conserva las preguntas, claves y referencias; las claves API no se exportan.
-- Una falla de IA no borra el trabajo ni obliga a contratar un servicio.
-- El modo conectado identifica el proveedor y obtiene aprobación antes de enviar contenido.
+- Un candidato válido se puede importar y revisar mediante el intercambio manual. Una importación inválida conserva el proyecto abierto. Ambos casos se pueden probar con archivos preparados.
+- Si se incorpora una API directa, el docente puede decidir qué enviar al proveedor identificado. Ante una falla se conserva el proyecto y queda disponible el recorrido offline.
 - Se distingue una referencia existente de una referencia que realmente respalda una afirmación.
 - Hay un conjunto pequeño de ejemplos que permite explicar qué se aplicó y qué limitaciones existen.
 
-## 8. Organización de las dos semanas
+## 8. Orden de trabajo y calendario
 
-Fechas orientativas: objetivo interno 9 de noviembre de 2026, margen hasta el 16. La entrega de la propuesta inicial cierra el 30 de octubre a las 00:00, según el aviso recibido. No son fechas oficiales nuevas del trabajo final.
+El 9 de noviembre y el margen hasta el 16 fueron estimaciones internas de octubre. El cierre del 30 de octubre correspondía a la propuesta inicial. Acordar un calendario desde el inicio efectivo según la disponibilidad de ambos y confirmar la fecha final de la cátedra.
 
-- **Primer tramo:** revisar el piloto de etiquetas con el compañero y probar viabilidad; no instalar componentes ni comprometer gastos sin necesidad.
-- **Semana 1:** núcleo offline, datos/etiquetas, referencia de palabras clave y primer clasificador, búsqueda y banco editable.
-- **Semana 2:** inferencia del clasificador en navegador, revisión, exportación, intercambio externo, evaluación e instrucciones. API directa solo si se valida y queda tiempo.
-- **Margen:** correcciones y devolución; no añadir funciones por defecto.
+- **Primer hito:** completar un examen con texto propio, recuperación por términos, editor, guardado, reapertura y exportación desde el HTML descargado. En paralelo, ambos revisan el piloto y reservan casos de evaluación.
+- **Segundo hito:** incorporar TF-IDF/coseno y el clasificador temático, ejecutar las comparaciones y comprobar la inferencia en navegador.
+- **Tercer hito:** completar el intercambio manual, probar casos límite y portabilidad, y preparar una defensa reproducible. La conexión API puede evaluarse después de cerrar el mínimo, si hay acceso viable y tiempo disponible.
 
-Reparto propuesto: una persona trabaja en datos/búsqueda/evaluación y otra en editor/exportación/conexión. Ambas participan en diseño, pruebas y defensa. Los nombres, responsabilidades y horas reales todavía deben acordarse.
+Reparto propuesto: una persona trabaja en recuperación y clasificación. La otra se ocupa del editor, archivos y exportación. Ambas revisan etiquetas, reproducen las pruebas y preparan la defensa.
 
 ## 9. Política de recorte
 
@@ -117,9 +119,7 @@ Si la integración externa no funciona bajo las condiciones de costo/acceso, doc
 
 ## 10. Siguiente decisión
 
-Recomendación: **web/HTML descargable + base offline + una conexión API opcional**. Confirmar esta dirección con el grupo antes de pasar a la prueba de viabilidad. La consola queda disponible como herramienta para experimentos, no como instalación obligatoria para docentes.
-
-Pendientes: devolución de la cátedra, dedicación del compañero, proveedor viable y validación del clasificador temático propuesto. No se seleccionó proveedor ni se implementaron estas funciones al escribir este plan.
+Acordar con el compañero el reparto, el corpus inicial y los casos reservados. Confirmar en el EVA fecha y formato de entrega. El recorrido previsto combina HTML descargable, núcleo offline e intercambio manual. La elección de proveedor queda para el caso en que se decida probar una API directa.
 
 ## Integración acordada para planificar
 
