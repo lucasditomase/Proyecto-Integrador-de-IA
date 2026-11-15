@@ -6,15 +6,15 @@ README.md → docs/ESTADO_Y_CONTINUIDAD.md → ALCANCE_DE_LA_PROPUESTA.md. Consu
 
 ## Propósito y fase
 
-Integrador de IA de dos estudiantes. El valor es demostrar conocimientos de la cátedra con una necesidad útil, métodos justificados, comparación y errores; no hacer una plataforma extensa. La fase actual es propuesta/planificación y demo simulada. No iniciar entrenamiento o implementación real por una solicitud de revisar documentos. Una futura solicitud explícita de desarrollar cambia esa fase y debe registrarse, sin pedir nuevamente permisos ya otorgados.
+Integrador de IA de dos estudiantes. El valor es demostrar conocimientos de la cátedra con una necesidad útil, métodos justificados, comparación y errores; no hacer una plataforma extensa. La aplicación implementada vive en app/ y se distribuye como demo/aula.html. Consultar docs/ENTREGA_AULA.md para uso, experimentos y pruebas. El plan y el material de presentación conservan el diseño de partida.
 
 Presupuesto del grupo cero. Debe existir un recorrido útil offline, sin clave, Mac, GPU, Python obligatorio para profesores o LLM local. HTML descargable es la dirección recomendada; consola de desarrollo no implica consola obligatoria para docentes. No contratar servicios ni asumir acceso gratuito universal.
 
 ## Estado y límites que deben preservarse
 
-Demo v0.3 usa preguntas y etiquetas precargadas; no ejecuta TF-IDF, clasificador ni IA externa y no guarda proyectos al recargar. No presentar simulaciones como inferencia o generación real. La asistencia avanzada mínima propuesta es intercambio manual estructurado. API directa solo tras validar un proveedor y sus condiciones, costo y acceso desde navegador. No reutilizar sesiones de OpenCode/Cline como si fueran API ni atribuir acceso API a una suscripción de chat.
+Demo v0.3 usa preguntas y etiquetas precargadas; no ejecuta TF-IDF, clasificador ni IA externa y no guarda proyectos al recargar. No presentar simulaciones como inferencia o generación real. La aplicación ofrece intercambio manual estructurado. API directa solo tras validar un proveedor y sus condiciones, costo y acceso desde navegador. No reutilizar sesiones de OpenCode/Cline como si fueran API ni atribuir acceso API a una suscripción de chat.
 
-Clasificador propuesto: tres temas de IA, TF-IDF/regresión logística frente a palabras clave y corrección docente. Los 30 ejemplos son exploratorios, redactados por el asistente y pendientes de revisión. No hay modelo ni métricas. Separar por grupos conceptuales, ajustar vocabulario/IDF con entrenamiento y preservar prueba. No confundir etiqueta temática con corrección, dificultad o certeza calibrada. Plantillas y embeddings son ampliaciones, no compromisos mínimos.
+Clasificador implementado: tres temas de IA, TF-IDF/regresión logística frente a palabras clave y corrección docente. Los 30 ejemplos del piloto se usaron para entrenar tras una revisión asistida. El conjunto reservado, el modelo y las métricas viven en datos/. Separar por grupos conceptuales, ajustar vocabulario/IDF con entrenamiento y preservar prueba. No confundir etiqueta temática con corrección, dificultad o certeza calibrada. Plantillas y embeddings son ampliaciones, no compromisos mínimos.
 
 ## Documentación y evidencia
 
@@ -25,3 +25,5 @@ Los originales docentes y el PDF del compañero están en el repo privado de teo
 ## Verificación y publicación
 
 Usar la guía de mantenimiento. Solo regenerar PDF si cambió su fuente; revisar visualmente cuando se regenere. Regenerar paquete tras cambios en sus archivos incluidos y comprobar hashes. Probar lo adecuado al cambio; documentación no requiere ejecutar notebooks o entrenar modelos. Evitar artefactos temporales y cambios ajenos en commits. No hacer push a upstream de los otros repos como parte de este trabajo. Si cambia demo/, verificar Actions y contenido publicado; cambios solo documentales no requieren redeploy de Pages.
+
+Para reproducir la aplicación, ejecutar scripts/entrenar_aula.py, scripts/evaluar_recuperacion.cjs y scripts/construir_aula.py en ese orden, con Python o Node según corresponda. Verificar con node --test tests/aula.test.cjs y python3 scripts/construir_aula.py --check.

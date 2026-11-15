@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aula · Prepará tu examen</title>
+<style>
+/* STYLES */
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap top"><a class="brand" href="#inicio">aula<span>.</span></a><span>Preparación de exámenes</span><a class="quiet" href="" download="aula.html" id="download-app">Descargar Aula</a></div>
+</header>
+<main class="wrap" id="inicio">
+  <section class="intro">
+    <h1>Prepará tu examen</h1>
+    <p>Buscá pasajes en tu material, redactá preguntas y revisá sus fuentes antes de exportar. El trabajo se procesa en este navegador.</p>
+    <div class="row project-tools"><label class="title-field">Título del examen<input id="title" maxlength="160" value="Evaluación de Inteligencia Artificial"></label>
+    <button id="save-project" type="button">Guardar proyecto</button>
+    <label class="file">Abrir proyecto<input id="load-project" type="file" accept=".json,application/json"></label></div>
+  </section>
+  <p id="status" role="status" aria-live="polite" class="status" hidden></p>
+  <div class="workspace">
+    <section class="panel" aria-labelledby="material-heading">
+      <h2 id="material-heading">Material y búsqueda</h2>
+      <form id="material-form">
+        <label>Título de la fuente<input id="source-name" maxlength="200" value="Apunte"></label>
+        <label>Texto del material<textarea id="material" rows="5" maxlength="200000" placeholder="Pegá el contenido de un apunte"></textarea></label>
+        <div class="row"><label class="file">Abrir TXT o Markdown<input id="load-material" type="file" accept=".txt,.md,.markdown,text/plain,text/markdown"></label>
+        <button class="primary" type="submit">Agregar material</button></div>
+      </form>
+      <p id="material-summary" class="muted"></p>
+      <form class="search" id="search-form">
+        <label>Buscar fragmentos<input id="query" maxlength="300" type="search" placeholder="Ej. conjunto de validación"></label>
+        <label>Método<select id="method"><option value="tfidf">TF-IDF y coseno</option><option value="lexical">Coincidencia de términos</option></select></label>
+        <button type="submit">Buscar</button>
+      </form>
+      <div id="results" class="results"></div>
+      <details id="exchange">
+        <summary>Intercambio con un asistente externo</summary>
+        <p>Marcá los fragmentos que quieras compartir. Descargá el pedido y compartilo vos. Importá la respuesta en JSON en esta sección.</p>
+        <div class="row"><button id="make-request" type="button">Descargar pedido</button><label class="file">Importar candidatos<input id="load-candidates" type="file" accept=".json,application/json"></label></div>
+        <p id="request-info" class="muted"></p>
+      </details>
+    </section>
+    <section class="panel" aria-labelledby="editor-heading">
+      <h2 id="editor-heading">Nueva pregunta</h2>
+      <form id="question-form">
+        <label>Enunciado<textarea id="stem" maxlength="1500" rows="3" required></textarea></label>
+        <fieldset><legend>Opciones. Marcá una o dos correctas</legend>
+          <div id="options"></div>
+        </fieldset>
+        <label>Fragmento de respaldo<select id="source" required></select></label>
+        <blockquote id="source-preview" hidden></blockquote>
+        <label>Fundamento docente<textarea id="rationale" maxlength="2500" rows="2" required></textarea></label>
+        <label>Tema<input id="topic" maxlength="80" placeholder="Etiqueta opcional"></label>
+        <div class="row"><button id="suggest" type="button">Sugerir tema</button><button class="primary" type="submit">Guardar pregunta</button><button id="cancel-edit" type="button" hidden>Cancelar edición</button></div>
+        <p id="suggestion" class="muted" aria-live="polite"></p>
+      </form>
+    </section>
+  </div>
+  <section class="panel bank" aria-labelledby="bank-heading">
+    <div class="row bank-head"><h2 id="bank-heading">Banco de preguntas</h2><div class="row"><button id="exam" type="button">Descargar examen</button><button id="key" type="button">Descargar clave</button></div></div>
+    <p id="bank-summary" class="muted"></p>
+    <label class="filter">Filtrar por tema<select id="filter"></select></label>
+    <div id="bank"></div>
+  </section>
+</main>
+<footer class="wrap">Aula · Proyecto integrador de Inteligencia Artificial</footer>
+<script id="trained-model" type="application/json">__AULA_MODEL__</script>
+<script>
+/* CORE */
+</script>
+<script>
+/* UI */
+</script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+{
+  "k": 3,
+  "mean": {
+    "lexical": 0.3055555555555556,
+    "tfidf": 0.3055555555555556
+  },
+  "cases": [
+    {
+      "type": "literal",
+      "query": "norma euclidiana",
+      "relevant": [
+        "vectores-1"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "vectores-1",
+            "vectores-4"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "vectores-1",
+            "vectores-4"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "literal",
+      "query": "producto escalar coseno",
+      "relevant": [
+        "vectores-2"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "vectores-2"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "vectores-2"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "literal",
+      "query": "votación vecinos",
+      "relevant": [
+        "vectores-3"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "vectores-3"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "vectores-3"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "literal",
+      "query": "escalado con datos reservados",
+      "relevant": [
+        "datos-2"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "datos-2"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "datos-2"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "literal",
+      "query": "matriz de confusión",
+      "relevant": [
+        "datos-4"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "datos-4"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "datos-4"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "literal",
+      "query": "activación ReLU",
+      "relevant": [
+        "redes-2"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "redes-2",
+            "redes-1"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "redes-2",
+            "redes-1"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "paráfrasis",
+      "query": "¿En qué dirección apuntan los vectores?",
+      "relevant": [
+        "vectores-2"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "vectores-2"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "vectores-2"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "paráfrasis",
+      "query": "¿Qué pasa con la distancia al mezclar unidades?",
+      "relevant": [
+        "vectores-4"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "vectores-4"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "vectores-4"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "paráfrasis",
+      "query": "¿Qué se reserva para conocer el rendimiento final?",
+      "relevant": [
+        "datos-1"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "datos-1"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "datos-1"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "paráfrasis",
+      "query": "¿Por qué averiguar de dónde salió una observación atípica?",
+      "relevant": [
+        "datos-3"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "vectores-1"
+          ],
+          "precision": 0
+        },
+        "tfidf": {
+          "ranked": [
+            "vectores-1"
+          ],
+          "precision": 0
+        }
+      }
+    },
+    {
+      "type": "paráfrasis",
+      "query": "¿Quién calcula cambios y quién actualiza pesos?",
+      "relevant": [
+        "redes-3"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "redes-1",
+            "redes-3"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "redes-1",
+            "redes-3"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "paráfrasis",
+      "query": "¿Cuándo detenerse si empeora la evaluación de validación?",
+      "relevant": [
+        "redes-4"
+      ],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "vectores-2",
+            "datos-1",
+            "redes-4"
+          ],
+          "precision": 0.3333333333333333
+        },
+        "tfidf": {
+          "ranked": [
+            "vectores-2",
+            "redes-4",
+            "datos-1"
+          ],
+          "precision": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "type": "sin respaldo",
+      "query": "¿Cómo se calcula la órbita de un satélite?",
+      "relevant": [],
+      "results": {
+        "lexical": {
+          "ranked": [],
+          "precision": null
+        },
+        "tfidf": {
+          "ranked": [],
+          "precision": null
+        }
+      }
+    },
+    {
+      "type": "sin respaldo",
+      "query": "¿Qué vector describe la órbita de un satélite?",
+      "relevant": [],
+      "results": {
+        "lexical": {
+          "ranked": [
+            "vectores-1"
+          ],
+          "precision": null
+        },
+        "tfidf": {
+          "ranked": [
+            "vectores-1"
+          ],
+          "precision": null
+        }
+      }
+    }
+  ]
+}

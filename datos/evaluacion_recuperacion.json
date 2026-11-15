@@ -1,0 +1,24 @@
+{
+  "origen": "Tres apuntes breves originales y consultas anotadas para un ejercicio reproducible. Las referencias se fijaron antes de ejecutar la comparación.",
+  "documents": [
+    {"id":"vectores","name":"Representación y vecinos","text":"Un vector de características describe una observación mediante coordenadas. La norma euclidiana mide su magnitud y vale cero para el vector nulo.\n\nLa similitud coseno divide el producto escalar por las normas. Si los vectores apuntan en la misma dirección, el coseno vale uno.\n\nK-NN asigna una clase por votación entre los vecinos más cercanos. El valor de k indica cuántos vecinos se consultan.\n\nLa escala de cada variable puede dominar una distancia euclidiana. Estandarizar ayuda a comparar variables con unidades diferentes."},
+    {"id":"datos","name":"Datos y evaluación","text":"El conjunto de validación permite comparar configuraciones. El conjunto de prueba se reserva para medir el rendimiento final.\n\nLa fuga de información ocurre cuando datos reservados influyen en el entrenamiento. Ajustar el escalado con el test es un ejemplo.\n\nUn valor faltante puede imputarse o conservarse como indicador. Antes de eliminar un valor atípico conviene investigar su origen.\n\nLa matriz de confusión cruza etiquetas reales y predichas. Los falsos positivos y falsos negativos dejan ver errores distintos."},
+    {"id":"redes","name":"Redes y aprendizaje","text":"Una neurona combina entradas, pesos y un sesgo. La preactivación es la suma ponderada antes de aplicar la función de activación.\n\nReLU lleva los valores negativos a cero. La activación no lineal permite representar relaciones más complejas que una suma ponderada.\n\nBackpropagation usa la regla de la cadena para calcular gradientes. El optimizador utiliza esos gradientes para actualizar los pesos.\n\nHay sobreajuste cuando el error de entrenamiento baja y el de validación aumenta. La parada temprana puede limitar ese deterioro."}
+  ],
+  "queries": [
+    ["literal","norma euclidiana","vectores-1"],
+    ["literal","producto escalar coseno","vectores-2"],
+    ["literal","votación vecinos","vectores-3"],
+    ["literal","escalado con datos reservados","datos-2"],
+    ["literal","matriz de confusión","datos-4"],
+    ["literal","activación ReLU","redes-2"],
+    ["paráfrasis","¿En qué dirección apuntan los vectores?","vectores-2"],
+    ["paráfrasis","¿Qué pasa con la distancia al mezclar unidades?","vectores-4"],
+    ["paráfrasis","¿Qué se reserva para conocer el rendimiento final?","datos-1"],
+    ["paráfrasis","¿Por qué averiguar de dónde salió una observación atípica?","datos-3"],
+    ["paráfrasis","¿Quién calcula cambios y quién actualiza pesos?","redes-3"],
+    ["paráfrasis","¿Cuándo detenerse si empeora la evaluación de validación?","redes-4"],
+    ["sin respaldo","¿Cómo se calcula la órbita de un satélite?"],
+    ["sin respaldo","¿Qué vector describe la órbita de un satélite?"]
+  ]
+}

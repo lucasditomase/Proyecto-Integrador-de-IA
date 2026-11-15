@@ -1,0 +1,248 @@
+{
+  "labels": [
+    "representacion_vecinos",
+    "datos_evaluacion",
+    "redes_aprendizaje"
+  ],
+  "trainCount": 30,
+  "testCount": 15,
+  "parameters": {
+    "epochs": 450,
+    "rate": 1.0,
+    "l2": 0.025
+  },
+  "baseline": {
+    "matrix": {
+      "representacion_vecinos": {
+        "representacion_vecinos": 5,
+        "datos_evaluacion": 0,
+        "redes_aprendizaje": 0,
+        "abstencion": 0
+      },
+      "datos_evaluacion": {
+        "representacion_vecinos": 0,
+        "datos_evaluacion": 2,
+        "redes_aprendizaje": 0,
+        "abstencion": 3
+      },
+      "redes_aprendizaje": {
+        "representacion_vecinos": 0,
+        "datos_evaluacion": 0,
+        "redes_aprendizaje": 5,
+        "abstencion": 0
+      }
+    },
+    "f1": {
+      "representacion_vecinos": 1.0,
+      "datos_evaluacion": 0.5714285714285714,
+      "redes_aprendizaje": 1.0
+    },
+    "macroF1": 0.8571428571428571
+  },
+  "model": {
+    "matrix": {
+      "representacion_vecinos": {
+        "representacion_vecinos": 5,
+        "datos_evaluacion": 0,
+        "redes_aprendizaje": 0,
+        "abstencion": 0
+      },
+      "datos_evaluacion": {
+        "representacion_vecinos": 1,
+        "datos_evaluacion": 3,
+        "redes_aprendizaje": 0,
+        "abstencion": 1
+      },
+      "redes_aprendizaje": {
+        "representacion_vecinos": 1,
+        "datos_evaluacion": 1,
+        "redes_aprendizaje": 3,
+        "abstencion": 0
+      }
+    },
+    "f1": {
+      "representacion_vecinos": 0.8333333333333334,
+      "datos_evaluacion": 0.6666666666666666,
+      "redes_aprendizaje": 0.75
+    },
+    "macroF1": 0.75
+  },
+  "cases": [
+    {
+      "text": "¿Cómo se representa el centro de varias observaciones como vector promedio?",
+      "group": "representacion_vecinos/centroide",
+      "expected": "representacion_vecinos",
+      "baseline": "representacion_vecinos",
+      "model": "representacion_vecinos",
+      "scores": [
+        0.4310124325066985,
+        -0.21901100372271265,
+        -0.21200142878398603
+      ]
+    },
+    {
+      "text": "¿Cómo puede una votación ponderar más a los vecinos que están a menor distancia?",
+      "group": "representacion_vecinos/ponderacion_vecinos",
+      "expected": "representacion_vecinos",
+      "baseline": "representacion_vecinos",
+      "model": "representacion_vecinos",
+      "scores": [
+        0.4202459738981147,
+        -0.22174837834386746,
+        -0.19849759555424729
+      ]
+    },
+    {
+      "text": "¿Qué regla aplicarías si dos clases empatan en la votación de los vecinos?",
+      "group": "representacion_vecinos/empate_vecinos",
+      "expected": "representacion_vecinos",
+      "baseline": "representacion_vecinos",
+      "model": "representacion_vecinos",
+      "scores": [
+        0.4445748047097515,
+        -0.3337201822073982,
+        -0.11085462250235331
+      ]
+    },
+    {
+      "text": "¿En qué se distingue la distancia Manhattan de la distancia euclidiana?",
+      "group": "representacion_vecinos/metrica_manhattan",
+      "expected": "representacion_vecinos",
+      "baseline": "representacion_vecinos",
+      "model": "representacion_vecinos",
+      "scores": [
+        0.3746892387463998,
+        -0.1909401890318482,
+        -0.18374904971455172
+      ]
+    },
+    {
+      "text": "¿Cómo representarías una categoría como vector binario para comparar observaciones?",
+      "group": "representacion_vecinos/categoricas",
+      "expected": "representacion_vecinos",
+      "baseline": "representacion_vecinos",
+      "model": "representacion_vecinos",
+      "scores": [
+        0.40879229210837176,
+        -0.20793674812952068,
+        -0.2008555439788512
+      ]
+    },
+    {
+      "text": "¿Por qué conservar las proporciones de clase al separar entrenamiento y prueba?",
+      "group": "datos_evaluacion/estratificacion",
+      "expected": "datos_evaluacion",
+      "baseline": "datos_evaluacion",
+      "model": "datos_evaluacion",
+      "scores": [
+        -0.19204887295125642,
+        0.32396696384241197,
+        -0.13191809089115572
+      ]
+    },
+    {
+      "text": "¿Cuándo preferirías recall si un falso negativo tiene un costo alto?",
+      "group": "datos_evaluacion/precision_recall",
+      "expected": "datos_evaluacion",
+      "baseline": "datos_evaluacion",
+      "model": "",
+      "scores": []
+    },
+    {
+      "text": "¿Por qué revisar duplicados antes de evaluar un modelo con registros reservados?",
+      "group": "datos_evaluacion/duplicados",
+      "expected": "datos_evaluacion",
+      "baseline": "",
+      "model": "datos_evaluacion",
+      "scores": [
+        -0.16866003936945423,
+        0.34033926255608793,
+        -0.17167922318663387
+      ]
+    },
+    {
+      "text": "¿Qué problema causa evaluar solo con datos de una población no representativa?",
+      "group": "datos_evaluacion/representatividad",
+      "expected": "datos_evaluacion",
+      "baseline": "",
+      "model": "datos_evaluacion",
+      "scores": [
+        -0.287133555974147,
+        0.4699732147357687,
+        -0.18283965876162173
+      ]
+    },
+    {
+      "text": "¿Cómo verificarías si dos anotadores aplican las mismas reglas para asignar etiquetas?",
+      "group": "datos_evaluacion/auditoria_etiquetas",
+      "expected": "datos_evaluacion",
+      "baseline": "",
+      "model": "representacion_vecinos",
+      "scores": [
+        0.550470985569593,
+        -0.2786238021781025,
+        -0.2718471833914905
+      ]
+    },
+    {
+      "text": "¿Por qué inicializar todos los pesos de una capa con el mismo valor puede ser problemático?",
+      "group": "redes_aprendizaje/inicializacion",
+      "expected": "redes_aprendizaje",
+      "baseline": "redes_aprendizaje",
+      "model": "datos_evaluacion",
+      "scores": [
+        -0.1761779316908495,
+        0.15729296656055916,
+        0.018884965130290324
+      ]
+    },
+    {
+      "text": "¿Qué cambia en la actualización de los pesos al variar el tamaño del lote?",
+      "group": "redes_aprendizaje/lote",
+      "expected": "redes_aprendizaje",
+      "baseline": "redes_aprendizaje",
+      "model": "redes_aprendizaje",
+      "scores": [
+        -0.10372905762986828,
+        -0.15030729634251888,
+        0.2540363539723872
+      ]
+    },
+    {
+      "text": "¿Qué efecto tiene penalizar los pesos grandes durante el entrenamiento de una red?",
+      "group": "redes_aprendizaje/regularizacion",
+      "expected": "redes_aprendizaje",
+      "baseline": "redes_aprendizaje",
+      "model": "redes_aprendizaje",
+      "scores": [
+        -0.20027152029497772,
+        -0.2779870606650343,
+        0.47825858096001217
+      ]
+    },
+    {
+      "text": "¿Cómo afecta a las primeras capas que el gradiente se acerque a cero?",
+      "group": "redes_aprendizaje/gradiente_desvanece",
+      "expected": "redes_aprendizaje",
+      "baseline": "redes_aprendizaje",
+      "model": "representacion_vecinos",
+      "scores": [
+        0.11572875363333904,
+        -0.20022456755386042,
+        0.08449581392052125
+      ]
+    },
+    {
+      "text": "¿Qué permite interpretar softmax en la salida de una red de clasificación?",
+      "group": "redes_aprendizaje/salida_softmax",
+      "expected": "redes_aprendizaje",
+      "baseline": "redes_aprendizaje",
+      "model": "redes_aprendizaje",
+      "scores": [
+        -0.2714702240505785,
+        -0.30405297320230845,
+        0.5755231972528871
+      ]
+    }
+  ]
+}

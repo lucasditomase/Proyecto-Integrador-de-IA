@@ -1,0 +1,20 @@
+{
+  "origen": "Preguntas originales redactadas para este experimento. No provienen de exámenes reales. Los grupos de prueba son distintos de los grupos del piloto.",
+  "ejemplos": [
+    ["representacion_vecinos", "centroide", "¿Cómo se representa el centro de varias observaciones como vector promedio?"],
+    ["representacion_vecinos", "ponderacion_vecinos", "¿Cómo puede una votación ponderar más a los vecinos que están a menor distancia?"],
+    ["representacion_vecinos", "empate_vecinos", "¿Qué regla aplicarías si dos clases empatan en la votación de los vecinos?"],
+    ["representacion_vecinos", "metrica_manhattan", "¿En qué se distingue la distancia Manhattan de la distancia euclidiana?"],
+    ["representacion_vecinos", "categoricas", "¿Cómo representarías una categoría como vector binario para comparar observaciones?"],
+    ["datos_evaluacion", "estratificacion", "¿Por qué conservar las proporciones de clase al separar entrenamiento y prueba?"],
+    ["datos_evaluacion", "precision_recall", "¿Cuándo preferirías recall si un falso negativo tiene un costo alto?"],
+    ["datos_evaluacion", "duplicados", "¿Por qué revisar duplicados antes de evaluar un modelo con registros reservados?"],
+    ["datos_evaluacion", "representatividad", "¿Qué problema causa evaluar solo con datos de una población no representativa?"],
+    ["datos_evaluacion", "auditoria_etiquetas", "¿Cómo verificarías si dos anotadores aplican las mismas reglas para asignar etiquetas?"],
+    ["redes_aprendizaje", "inicializacion", "¿Por qué inicializar todos los pesos de una capa con el mismo valor puede ser problemático?"],
+    ["redes_aprendizaje", "lote", "¿Qué cambia en la actualización de los pesos al variar el tamaño del lote?"],
+    ["redes_aprendizaje", "regularizacion", "¿Qué efecto tiene penalizar los pesos grandes durante el entrenamiento de una red?"],
+    ["redes_aprendizaje", "gradiente_desvanece", "¿Cómo afecta a las primeras capas que el gradiente se acerque a cero?"],
+    ["redes_aprendizaje", "salida_softmax", "¿Qué permite interpretar softmax en la salida de una red de clasificación?"]
+  ]
+}

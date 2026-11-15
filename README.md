@@ -8,7 +8,13 @@ Consultar también la [revisión académica, de costo y compatibilidad](docs/REV
 
 El contraste con el paquete completo de 22 laboratorios fija los criterios de evidencia para el desarrollo y la defensa. [Verificación previa a implementar](docs/VERIFICACION_PREVIA_A_IMPLEMENTAR.md).
 
-## Demo pública
+## Aplicación de Aula
+
+Entrá en [Aula en GitHub Pages](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/aula.html) o descargá [aula.html](demo/aula.html) para abrirlo con un navegador actual. La aplicación permite trabajar con material propio, buscar fragmentos, sugerir temas, guardar proyectos y exportar examen y clave. El intercambio con un asistente usa archivos que el docente decide compartir.
+
+Para usarla y reproducir los experimentos, consultá [uso, resultados y defensa](docs/ENTREGA_AULA.md). Los documentos de propuesta y el ZIP registran la etapa de presentación v0.3.
+
+## Demo pública de presentación v0.3
 
 **[Abrir la demo en GitHub Pages](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/)**
 
@@ -32,7 +38,7 @@ Los textos propios pueden previsualizarse, pero no se interpretan ni generan pre
 
 ## Uso local
 
-Abrir `demo/index.html` en un navegador. Es un archivo independiente: no requiere instalación, servidor ni conexión a internet.
+Abrí `demo/aula.html` en un navegador para trabajar offline. Para consultar el prototipo de la propuesta, abrí `demo/index.html`.
 
 ## Dirección propuesta
 
@@ -42,7 +48,7 @@ La base prevista incluye preparación del texto, recuperación liviana, edición
 
 El informe, PDF, demo y paquete de presentación corresponden a la versión 0.3 y comparten [el alcance de referencia](ALCANCE_DE_LA_PROPUESTA.md). Las opciones exploratorias se distinguen de las funciones comprometidas. La conexión API requiere una prueba previa; el intercambio manual con un asistente no se presenta como una conexión automática.
 
-La demo de presentación sigue usando preguntas preparadas. El procesamiento de material propio, el clasificador, el modo básico real y la conexión a IA todavía no se implementaron. No se eligió un proveedor definitivo.
+La aplicación incluye material propio, búsqueda y clasificación locales, editor e intercambio manual. El acceso directo a un proveedor de IA queda fuera de esta entrega.
 
 ## Publicación con GitHub Pages
 
