@@ -29,6 +29,7 @@ Los textos propios pueden previsualizarse, pero no se interpretan ni generan pre
 
 ## Material del proyecto
 
+- [Informe final de entrega](output/pdf/INFORME_FINAL_AULA.pdf) y [fuente editable](docs/INFORME_FINAL_AULA.md).
 - [Alcance común de presentación v0.3](ALCANCE_DE_LA_PROPUESTA.md).
 - [Propuesta consolidada v0.3](PROPUESTA_PARA_ENTREGA.md).
 - [Informe PDF de dos páginas](output/pdf/PROPUESTA_PARA_ENTREGA.pdf).
