@@ -6,6 +6,8 @@ Para retomar sin el chat: [estado, decisiones y pendientes](docs/ESTADO_Y_CONTIN
 
 Consultar también la [revisión académica, de costo y compatibilidad](docs/REVISION_ACADEMICA_Y_VIABILIDAD.md): distingue viabilidad del diseño de pruebas pendientes de implementación.
 
+El contraste con el paquete completo de 22 laboratorios fija los criterios de evidencia para el desarrollo y la defensa. [Verificación previa a implementar](docs/VERIFICACION_PREVIA_A_IMPLEMENTAR.md).
+
 ## Demo pública
 
 **[Abrir la demo en GitHub Pages](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/)**
