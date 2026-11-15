@@ -2,23 +2,28 @@
 
 Asistente para preparar exámenes multiple choice a partir de material docente. Trabajo integrador grupal de **Inteligencia Artificial · Ingeniería en Informática · 2026**.
 
-Para retomar sin el chat: [estado, decisiones y pendientes](docs/ESTADO_Y_CONTINUIDAD.md), [mantenimiento](docs/MANTENIMIENTO.md) e [instrucciones para agentes](AGENTS.md).
+## Empezá a usar Aula
 
-Consultar también la [revisión académica, de costo y compatibilidad](docs/REVISION_ACADEMICA_Y_VIABILIDAD.md): distingue viabilidad del diseño de pruebas pendientes de implementación.
+**[Abrir la aplicación final](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/aula.html)**. Para usarla sin conexión, pulsá **Descargar Aula** y abrí el archivo `aula.html` con el navegador. Para preparar un examen solo necesitás ese archivo o el enlace.
 
-El contraste con el paquete completo de 22 laboratorios fija los criterios de evidencia para el desarrollo y la defensa. [Verificación previa a implementar](docs/VERIFICACION_PREVIA_A_IMPLEMENTAR.md).
+1. Pegá tu apunte o elegí un archivo TXT o Markdown. Pulsá **Agregar material**.
+2. Buscá un término del apunte y pulsá **Usar en la pregunta** en el fragmento que respalda lo que querés preguntar.
+3. Redactá la pregunta con cuatro opciones, marcá una o dos correctas y escribí un fundamento. Pulsá **Guardar pregunta** y después **Aprobar** en el banco.
+4. Usá **Guardar proyecto** para descargar el trabajo editable y **Abrir proyecto** para retomarlo. Bajá el examen y la clave por separado con **Descargar examen** y **Descargar clave**.
 
-## Aplicación de Aula
+El [manual de uso](docs/ENTREGA_AULA.md#usar-aula) incluye un [ejemplo de intercambio con un asistente externo](docs/ENTREGA_AULA.md#ejemplo-de-intercambio-con-un-asistente-externo). El [apartado de reproducción](docs/ENTREGA_AULA.md#reproducir) reúne los comandos para repetir los experimentos.
 
-Entrá en [Aula en GitHub Pages](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/aula.html) o descargá [aula.html](demo/aula.html) para abrirlo con un navegador actual. La aplicación permite trabajar con material propio, buscar fragmentos, sugerir temas, guardar proyectos y exportar examen y clave. El intercambio con un asistente usa archivos que el docente decide compartir.
+## Documentación académica y de mantenimiento
 
-Para usarla y reproducir los experimentos, consultá [uso, resultados y defensa](docs/ENTREGA_AULA.md). Los documentos de propuesta y el ZIP registran la etapa de presentación v0.3.
+Consultá [estado y continuidad](docs/ESTADO_Y_CONTINUIDAD.md), [mantenimiento](docs/MANTENIMIENTO.md) e [instrucciones para agentes](AGENTS.md). La revisión de costo y compatibilidad documenta las decisiones de diseño previas a implementar. [Revisión académica y de viabilidad](docs/REVISION_ACADEMICA_Y_VIABILIDAD.md)
+
+La verificación previa relaciona el alcance con las consignas de los 22 laboratorios. [Verificación previa a implementar](docs/VERIFICACION_PREVIA_A_IMPLEMENTAR.md)
 
 ## Demo pública de presentación v0.3
 
-**[Abrir la demo en GitHub Pages](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/)**
+**[Abrir el prototipo de la propuesta en GitHub Pages](https://lucasditomase.github.io/Proyecto-Integrador-de-IA/)**
 
-La demo actual no tiene IA conectada: utiliza un apunte y un banco de preguntas preparados para mostrar el recorrido propuesto. Permite configurar preguntas, mostrar la clave y su fundamento, editar, aprobar, descartar y descargar un examen con su clave separada.
+El prototipo de la propuesta utiliza un apunte y un banco de preguntas preparados para mostrar el recorrido propuesto. Permite configurar preguntas, mostrar la clave y su fundamento, editar, aprobar, descartar y descargar un examen con su clave separada.
 
 Los textos propios pueden previsualizarse, pero no se interpretan ni generan preguntas nuevas. Para simular el examen se utiliza el apunte incorporado. No se envían archivos a un servidor ni se guardan cambios después de recargar.
 
@@ -40,7 +45,7 @@ Los textos propios pueden previsualizarse, pero no se interpretan ni generan pre
 
 Abrí `demo/aula.html` en un navegador para trabajar offline. Para consultar el prototipo de la propuesta, abrí `demo/index.html`.
 
-## Dirección propuesta
+## Decisiones de la propuesta v0.3
 
 Se recomienda una herramienta web/HTML descargable con dos modos: una base gratuita y offline para trabajar con material propio, y generación opcional mediante una clave API del usuario. Debe funcionar en equipos comunes y no depender de la Mac del grupo ni de un modelo de lenguaje local. Presupuesto del grupo: cero.
 
